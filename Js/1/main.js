@@ -1,7 +1,7 @@
 // document.querySelector('h2').style.backgroundColor = 'blue';
 
 
-
+/*
 let j = 0;
 const colors = [
   'red',
@@ -13,7 +13,7 @@ setInterval(() => {
   document.querySelector('#lel').style.backgroundColor = colors[j % colors.length];
   j = (j + 1) % colors.length;
 }, 5000);
-
+*/
 const h3Element = document.createElement('h3');
 h3Element.innerText = 'Book #03';
 const liElement1 = document.createElement('li');

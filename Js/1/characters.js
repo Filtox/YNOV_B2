@@ -1,3 +1,4 @@
+
 class Person {
     constructor(firstName, lastName, birthDate) {
       this.firstName = firstName;
@@ -20,7 +21,7 @@ class Character extends Person {
       return super.getFullName() + ' (' + this.movie + ')';
     }
 }
-  
+
 const characters = [
     new Character('Bilbo', 'Baggins', new Date(1918, 0, 1), 'The Lord of the Rings'),
     new Character('Luke', 'Skywalker', new Date(2001, 0, 1), 'Star Wars'),
@@ -31,7 +32,8 @@ const characters = [
 ];
   
 console.log(characters);
-  
+
+/*
 const oldestNames = characters
     .filter(character => character.birthDate.getFullYear() < 1980)
     .map(character => character.getFullName())
@@ -43,6 +45,7 @@ const oldestNames = characters
 }, '');
 
 console.log(oldestNames);
+*/
 /*
 const ulElement2 = document.querySelector('ul');
 
@@ -52,10 +55,13 @@ characterService.findAll().forEach(character => {
       ulElement2.appendChild(liElement);
 });
 */
+
+/*
 const  buttonElement = document.querySelector('button');
 buttonElement.addEventListener('click', () => {
     console.log('Salut');
 });
+*/
 
 // sur chaque element, on obtient un bouton qui permet de supprimer la ligne
 // bouton apparaitre age et disparaitre en cliquant une fois ou deux.
