@@ -65,3 +65,11 @@ buttonElement.addEventListener('click', () => {
 
 // sur chaque element, on obtient un bouton qui permet de supprimer la ligne
 // bouton apparaitre age et disparaitre en cliquant une fois ou deux.
+
+for (let i = 0; i < characters.length; i++) {
+  //
+}
+// Ou
+characters.forEach(character => {
+  //
+})
