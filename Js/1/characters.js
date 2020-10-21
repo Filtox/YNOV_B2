@@ -66,10 +66,29 @@ buttonElement.addEventListener('click', () => {
 // sur chaque element, on obtient un bouton qui permet de supprimer la ligne
 // bouton apparaitre age et disparaitre en cliquant une fois ou deux.
 
-for (let i = 0; i < characters.length; i++) {
-  //
-}
-// Ou
+const ulElement2 = document.querySelector('ul');
+
 characters.forEach(character => {
-  //
+  const liElement = document.createElement('li');
+  const inputElement = document.createElement('button');
+  liElement.innerText = character.firstName + ' ' + character.lastName;
+  ulElement2.appendChild(liElement);
+  ulElement2.appendChild(inputElement);
+  inputElement.style="background-color : red; height : 20px;";
+  inputElement.onclick="removeInput()";
+
+  if (inputElement.onclick)
+  {
+    ulElement2.parentNode.removeChild(ulElement2);    
+  } 
 })
+
+/*
+var listItemHTML = '<div id="item' + i + '"><input type="checkbox" onclick="crossedOut(\'item' + i + '\');">' + listItem + 
+'<input type = "button" value="Remove" onclick="removeItem(\'item' + i + '\');"></div>';
+
+function removeItem(item){
+  var itemToRemove = document.getElementById(item);
+  itemToRemove.parentNode.removeChild(itemToRemove);
+}
+*/
