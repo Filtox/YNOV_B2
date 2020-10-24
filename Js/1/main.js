@@ -14,6 +14,7 @@ setInterval(() => {
   j = (j + 1) % colors.length;
 }, 5000);
 */
+/*
 const h3Element = document.createElement('h3');
 h3Element.innerText = 'Book #03';
 const liElement1 = document.createElement('li');
@@ -33,3 +34,4 @@ ulElement.appendChild(liElement);
 setTimeout(() => {
     ulElement.removeChild(liElement);
 }, 2000);
+*/

@@ -70,25 +70,25 @@ const ulElement2 = document.querySelector('ul');
 
 characters.forEach(character => {
   const liElement = document.createElement('li');
-  const inputElement = document.createElement('button');
+  const buttonDelete = document.createElement('button');
   liElement.innerText = character.firstName + ' ' + character.lastName;
   ulElement2.appendChild(liElement);
-  ulElement2.appendChild(inputElement);
-  inputElement.style="background-color : red; height : 20px;";
-  inputElement.onclick="removeInput()";
+  ulElement2.appendChild(buttonDelete);
 
-  if (inputElement.onclick)
-  {
-    ulElement2.parentNode.removeChild(ulElement2);    
-  } 
+  function deleteinput() {
+    liElement.parentElement.removeChild(liElement);
+    buttonDelete.parentElement.removeChild(buttonDelete);
+  }
+  buttonDelete.addEventListener("click", deleteinput); 
 })
 
-/*
-var listItemHTML = '<div id="item' + i + '"><input type="checkbox" onclick="crossedOut(\'item' + i + '\');">' + listItem + 
-'<input type = "button" value="Remove" onclick="removeItem(\'item' + i + '\');"></div>';
-
-function removeItem(item){
-  var itemToRemove = document.getElementById(item);
-  itemToRemove.parentNode.removeChild(itemToRemove);
+function ajoutCharacter() {
+  const inputName = document.getelementById('name').value;
+  const inputPrenom = document.getelementById('prenom').value;
+  const inputDate = document.getelementById('date').value;
+  console.log(inputName);
+  console.log(inputPrenom);
+  console.log(inputDate);
 }
-*/
+
+//faire disparaitre tableau de charactere et le mettre dans le fichier json.
