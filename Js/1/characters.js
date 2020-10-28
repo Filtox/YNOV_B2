@@ -30,8 +30,80 @@ const characters = [
     new Character('Han', 'Solo', new Date(1986, 0, 1), 'Star Wars'),
     new Character('Maître', 'Yoda', new Date(1120, 0, 1), 'Star Wars')
 ];
-  
-console.log(characters);
+
+const ulElement2 = document.querySelector('ul');
+
+characters.forEach(character => {
+  const liElement = document.createElement('li');
+  liElement.innerText = character.firstName + ' ' + character.lastName;
+  ulElement2.appendChild(liElement);
+})
+
+/*
+function ajoutCharacter() {
+  const inputName = document.getelementById('name').value;
+  const inputPrenom = document.getelementById('prenom').value;
+  const inputDate = document.getelementById('date').value;
+  console.log(inputName);
+  console.log(inputPrenom);
+  console.log(inputDate);
+}
+*/
+
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
 /*
 const oldestNames = characters
@@ -65,30 +137,5 @@ buttonElement.addEventListener('click', () => {
 
 // sur chaque element, on obtient un bouton qui permet de supprimer la ligne
 // bouton apparaitre age et disparaitre en cliquant une fois ou deux.
-
-const ulElement2 = document.querySelector('ul');
-
-characters.forEach(character => {
-  const liElement = document.createElement('li');
-  const buttonDelete = document.createElement('button');
-  liElement.innerText = character.firstName + ' ' + character.lastName;
-  ulElement2.appendChild(liElement);
-  ulElement2.appendChild(buttonDelete);
-
-  function deleteinput() {
-    liElement.parentElement.removeChild(liElement);
-    buttonDelete.parentElement.removeChild(buttonDelete);
-  }
-  buttonDelete.addEventListener("click", deleteinput); 
-})
-
-function ajoutCharacter() {
-  const inputName = document.getelementById('name').value;
-  const inputPrenom = document.getelementById('prenom').value;
-  const inputDate = document.getelementById('date').value;
-  console.log(inputName);
-  console.log(inputPrenom);
-  console.log(inputDate);
-}
 
 //faire disparaitre tableau de charactere et le mettre dans le fichier json.
