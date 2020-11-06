@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/2/Personnel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,5 +67,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="104" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604649103530">
+      <screen x="0" y="0" width="1918" height="898" />
+    </state>
+    <state x="413" y="104" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1918.898@0.0.1918.898" timestamp="1604649103530" />
+    <state x="739" y="204" key="FileChooserDialogImpl" timestamp="1604649115718">
+      <screen x="0" y="0" width="1918" height="898" />
+    </state>
+    <state x="739" y="204" key="FileChooserDialogImpl/0.0.1918.898@0.0.1918.898" timestamp="1604649115718" />
   </component>
 </project>
