@@ -34,25 +34,19 @@ const ulElement2 = document.querySelector('ul');
 
 characters.forEach(character => {
   const liElement = document.createElement('li');
-  const buttonDelete = document.createElement('button');
   liElement.innerText = character.firstName + ' ' + character.lastName;
   ulElement2.appendChild(liElement);
+
+  //suppression
+  const buttonDelete = document.createElement('button');
   ulElement2.appendChild(buttonDelete);
-  
   function deleteinput() {
     liElement.parentElement.removeChild(liElement);
     buttonDelete.parentElement.removeChild(buttonDelete);
   }
   buttonDelete.addEventListener("click", deleteinput);
-/*
-  const buttonCheck = document.createElement('button');
-  ulElement2.appendChild(buttonCheck);
-  function checkEleves() {
-    liElement.style.color = 'red';
-  }
-  buttonCheck.addEventListener("click", checkEleves);
-*/
 
+  //coche les élèves pour la présence en cours
   var inputCheck = document.createElement('input');
   inputCheck.setAttribute('type', 'checkbox');
   inputCheck.setAttribute('class', 'check');
@@ -65,12 +59,10 @@ characters.forEach(character => {
         liElement.style.color ="black";
         liElement.style.textDecoration ="none";
     }
-});
-  
+  });
 })
 
-
-
+//fonction recherche
 function search() { 
   let input = document.getElementById('searchbar').value 
   input=input.toLowerCase(); 
@@ -86,5 +78,32 @@ function search() {
           x[i].style.display="list-item";
           y[i].style.display="list-item";            
       } 
+  }
+}
+
+
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
   }
 }
