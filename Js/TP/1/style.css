@@ -1,0 +1,9 @@
+h2 {
+    color: green;
+}
+button {
+    background-color: rgb(50, 168, 172);
+    height : 20px;
+    width : 50px;
+    border-radius: 100%;
+}
