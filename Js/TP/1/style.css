@@ -7,3 +7,35 @@ button {
     width : 50px;
     border-radius: 100%;
 }
+
+
+#searchbar{ 
+    margin-left: 15%; 
+    padding:15px; 
+    border-radius: 10px; 
+} 
+
+input[type=text] { 
+     width: 30%; 
+     -webkit-transition: width 0.15s ease-in-out; 
+     transition: width 0.15s ease-in-out; 
+} 
+
+  /* When the input field gets focus, 
+       change its width to 100% */
+input[type=text]:focus { 
+    width: 70%; 
+} 
+
+#myUL{ 
+   font-size:  1.5em; 
+   margin-left: 90px; 
+} 
+
+li { 
+  display: list-item;     
+ }
+
+ button {
+     display: list-item;
+ }

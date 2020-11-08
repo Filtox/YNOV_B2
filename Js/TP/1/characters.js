@@ -1,4 +1,3 @@
-
 class Person {
     constructor(firstName, lastName, birthDate) {
       this.firstName = firstName;
@@ -30,41 +29,6 @@ const characters = [
     new Character('Han', 'Solo', new Date(1986, 0, 1), 'Star Wars'),
     new Character('Maître', 'Yoda', new Date(1120, 0, 1), 'Star Wars')
 ];
-  
-console.log(characters);
-
-/*
-const oldestNames = characters
-    .filter(character => character.birthDate.getFullYear() < 1980)
-    .map(character => character.getFullName())
-    .reduce((accumulator, name, index) => {
-      if (!index) {
-        return name;
-      }
-      return accumulator + ', ' + name;
-}, '');
-
-console.log(oldestNames);
-*/
-/*
-const ulElement2 = document.querySelector('ul');
-
-characterService.findAll().forEach(character => {
-      const liElement = document.createElement('li');
-      liElement.innerText = character.firstName + ' ' + character.lastName;
-      ulElement2.appendChild(liElement);
-});
-*/
-
-/*
-const  buttonElement = document.querySelector('button');
-buttonElement.addEventListener('click', () => {
-    console.log('Salut');
-});
-*/
-
-// sur chaque element, on obtient un bouton qui permet de supprimer la ligne
-// bouton apparaitre age et disparaitre en cliquant une fois ou deux.
 
 const ulElement2 = document.querySelector('ul');
 
@@ -74,10 +38,47 @@ characters.forEach(character => {
   liElement.innerText = character.firstName + ' ' + character.lastName;
   ulElement2.appendChild(liElement);
   ulElement2.appendChild(buttonDelete);
-
+  
   function deleteinput() {
     liElement.parentElement.removeChild(liElement);
     buttonDelete.parentElement.removeChild(buttonDelete);
   }
-  buttonDelete.addEventListener("click", deleteinput); 
+  buttonDelete.addEventListener("click", deleteinput);
+/*
+  const buttonCheck = document.createElement('button');
+  ulElement2.appendChild(buttonCheck);
+  function checkEleves() {
+    liElement.style.color = 'red';
+  }
+  buttonCheck.addEventListener("click", checkEleves);
+*/
+  const inputCheck = document.createElement('input');
+  document.getElementsByTagName("input").type = "checkbox";
+  ulElement2.appendChild(inputCheck);
+  var checkbox = document.getElementsByTagName("input");
+  checkbox.addEventListener( 'change', function() {
+      if(this.checked) {
+        liElement.style.color = 'red';
+      } else {
+        liElement.style.color = 'green';
+      }
+  });
 })
+
+function search() { 
+  let input = document.getElementById('searchbar').value 
+  input=input.toLowerCase(); 
+  let x = document.getElementsByTagName('li'); 
+  let y = document.getElementsByTagName('button'); 
+    
+  for (i = 0; i < x.length; i++) {  
+      if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+          x[i].style.display="none";
+          y[i].style.display="none";
+      } 
+      else { 
+          x[i].style.display="list-item";
+          y[i].style.display="list-item";            
+      } 
+  }
+} 
