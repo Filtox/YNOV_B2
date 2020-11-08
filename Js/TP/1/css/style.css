@@ -39,3 +39,7 @@ li {
  button {
      display: list-item;
  }
+ 
+ input:checked > li {
+    color: blue;
+ }

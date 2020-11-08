@@ -54,10 +54,22 @@ characters.forEach(character => {
 */
 
   var inputCheck = document.createElement('input');
-  inputCheck.setAttribute("id", "check");
-  document.getElementById('check').type = 'text';
-  ulElement2.appendChild(inputCheck); 
+  inputCheck.setAttribute('type', 'checkbox');
+  inputCheck.setAttribute('class', 'check');
+  ulElement2.appendChild(inputCheck);
+  inputCheck.addEventListener( 'change', function() {
+    if(this.checked) {
+        liElement.style.color ="green";
+        liElement.style.textDecoration ="line-through";
+    } else {
+        liElement.style.color ="black";
+        liElement.style.textDecoration ="none";
+    }
+});
+  
 })
+
+
 
 function search() { 
   let input = document.getElementById('searchbar').value 
