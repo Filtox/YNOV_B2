@@ -52,17 +52,11 @@ characters.forEach(character => {
   }
   buttonCheck.addEventListener("click", checkEleves);
 */
-  const inputCheck = document.createElement('input');
-  document.getElementsByTagName("input").type = "checkbox";
-  ulElement2.appendChild(inputCheck);
-  var checkbox = document.getElementsByTagName("input");
-  checkbox.addEventListener( 'change', function() {
-      if(this.checked) {
-        liElement.style.color = 'red';
-      } else {
-        liElement.style.color = 'green';
-      }
-  });
+
+  var inputCheck = document.createElement('input');
+  inputCheck.setAttribute("id", "check");
+  document.getElementById('check').type = 'text';
+  ulElement2.appendChild(inputCheck); 
 })
 
 function search() { 
@@ -81,4 +75,4 @@ function search() {
           y[i].style.display="list-item";            
       } 
   }
-} 
+}
