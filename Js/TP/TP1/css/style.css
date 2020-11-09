@@ -1,0 +1,136 @@
+h2 {
+    margin:5px;
+    font-family : sans-serif;
+    font-size: 50px;
+    color: black;
+}
+
+button {
+    background-color: rgb(50, 168, 172);
+    height : 20px;
+    width : 50px;
+    border-radius: 100%;
+}
+
+#searchbar{ 
+    margin-left: 30%; 
+    padding:10px; 
+    border-radius: 10px;
+    border: .7mm solid;
+    margin-top: 20px;
+    width: 40%;
+}
+
+li { 
+  display: list-item;     
+ }
+
+ button {
+     display: list-item;
+ }
+
+ body {
+    margin: 0;
+    min-width: 250px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  ul {
+    margin-left: 16%;
+    margin-right: 16%;
+  }
+  
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: white;
+    font-size: 17px;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  ul li.checked {
+    background: #76da7e;
+    color: black;
+    text-decoration: line-through;
+  }
+  
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    border: .1mm;
+    border-style: dashed solid;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    border: .1mm;
+    border-style: dashed solid;
+  }
+  
+  .header {
+    padding: 30px 20%;
+    color: white;
+    text-align: center;
+  }
+  
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  input {
+    margin: 0;
+    border: .7mm solid;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  .boutonAjouter {
+    padding: 10px;
+    width: 25%;
+    background: #75b0ec;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    font-family: fantasy;
+    border: solid;
+  }
+  
+  .boutonAjouter:hover {
+    background-color: #bbb;
+  }
