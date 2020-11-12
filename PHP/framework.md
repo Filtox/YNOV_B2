@@ -17,6 +17,7 @@ php artisan make:controller [NomControlleur]
 L'utilité du template est d'utiliser le template dans chaque views. Tout ce qui est contenu dans le template apparaitra dans les views qui lui font appel.
 
 Exemple :
+###### Template :
 ```html
 <!-- Template -->
 <!doctype html>
@@ -32,8 +33,8 @@ Exemple :
 </html>
 ```
 Le mot clé @yield permet de reserver un emplacement nommé ici "titre" et "contenu"
+###### View
 ```php
-// View
 @extends ('template')   // indique le template à utiliser
 
 @section('titre')       // debut de section avec le nom de la section
