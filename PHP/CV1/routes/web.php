@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('home'); 
 })->name('home');
 
-Route::get('moncv', function () {
+Route::get('Mon_CV', function () {
     return view('moncv');
 })->name('moncv');
 
-Route::get('contact', function () {
+Route::get('Contact', function () {
     return view('contact');
 })->name('contact');

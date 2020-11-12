@@ -13,14 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+*/
+
+Route::get('/', 'WelcomeController@index')->name('home');
+
+Route::apiResource('photos', 'PhotoController');
+
 /*
 Route::get('{n}', function ($n) {
     return 'Je suis là' . $n . ' ! ';
 })->where("n", "[0-9]+");
 */
+
 Route::get('10', function () {
     return "Je suis à la page 10.";
 });
