@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-
+/*
 Route::get('{n}', function ($n) {
     return 'Je suis là' . $n . ' ! ';
 })->where("n", "[0-9]+");
-
+*/
 Route::get('10', function () {
     return "Je suis à la page 10.";
 });
@@ -40,6 +40,10 @@ Route::get('testjson', function () {
 Route::get('notfound', function () {
     return response('un test', 418)->header('Content-Type', 'text/plain');
 }); 
+
+Route::get('article/{n}', function($n) {
+    return view('article')->with('numero', $n);
+})->where('n', '[0-9]+');
 
 Route::get('{n}', function ($n) {
     return "Je suis à la page " . $n . ".";
