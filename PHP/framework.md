@@ -40,9 +40,22 @@ laravel new monappli
 ![Accessibilité](https://github.com/Filtox/YNOV_B2/blob/dev/PHP/img/access.png)
 
 
+### Le routage
+
+Les méthodes HTTP :
+* GET : demande d’une ressource qui ne change pas
+* POST : modifier ou ajouter un resource : soumission de formulaire
+* PUT : ajout ou remplacement complet d’une ressource
+* PATCH : modification partielle d’une ressource
+* DELETE : suppression d’un ressource
+
+
+
+
+
 Un paragraphe en pur php :
 ```
-<p>Cest larticle n° <?php $numero ?></p>
+<p>C'est l'article n° <?php $numero ?></p>
 ```
 Deviens en blade :
 ```
