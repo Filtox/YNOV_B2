@@ -1,5 +1,5 @@
 Un paragraphe en pur php :
-```php
+```html
 <p>Cest larticle n° <?php $numero ?></p>
 ```
 Deviens en blade :
