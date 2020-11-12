@@ -14,11 +14,11 @@ php artisan make:controller [NomControlleur]
 
 # Template
 
-L'utilité du template est d'utiliser le template dans chaque views
+L'utilité du template est d'utiliser le template dans chaque views. Tout ce qui est contenu dans le template apparaitra dans les views qui lui font appel.
 
 Exemple :
-```php
-// Template
+```html
+<!-- Template -->
 <!doctype html>
 <html lang="fr">
 <head>
@@ -31,13 +31,14 @@ Exemple :
 </body>
 </html>
 ```
+Le mot clé @yield permet de reserver un emplacement nommé ici "titre" et "contenu"
 ```php
 // View
-@extends ('layouts.template')
+@extends ('template')   // indique le template à utiliser
 
-@section('titre')
-    Mon article
-@endsection
+@section('titre')       // debut de section avec le nom de la section
+    Mon article         // le contenu à remplacer dans le template
+@endsection             // fin de section
 
 @section('contenu')
     C'est l'article n° {{ $numero }}
