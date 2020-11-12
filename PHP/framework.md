@@ -1,9 +1,9 @@
 Un paragraphe en pur php :
-```php
+```
 <p>Cest larticle n° <?php $numero ?></p>
 ```
 Deviens en blade :
-```php
+```
 <p>C'est l'article n° {{ $numero }}</p>
 ```
 
@@ -17,9 +17,8 @@ php artisan make:controller [NomControlleur]
 L'utilité du template est d'utiliser le template dans chaque views. Tout ce qui est contenu dans le template apparaitra dans les views qui lui font appel.
 
 Exemple :
-###### Template :
+##### Template :
 ```html
-<!-- Template -->
 <!doctype html>
 <html lang="fr">
 <head>
@@ -33,7 +32,7 @@ Exemple :
 </html>
 ```
 Le mot clé @yield permet de reserver un emplacement nommé ici "titre" et "contenu"
-###### View
+##### View :
 ```php
 @extends ('template')   // indique le template à utiliser
 
