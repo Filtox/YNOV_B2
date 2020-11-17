@@ -18,14 +18,7 @@ class ContactsTableSeeder extends Seeder
                 'email' => 'jhon.doe@email.com',
                 'phonenumber' => 'XXXXXX',
                 'comments' => 'none',
-            ],
-            [
-                'firstname' => '',
-                'lastname' => '',
-                'email' => '',
-                'phonenumber' => '',
-                'comments' => 'none',
-            ],
+            ]
         ])
     }
 }
