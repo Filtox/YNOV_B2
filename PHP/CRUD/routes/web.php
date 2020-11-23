@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('tasks', 'TasksController@index')->name('tasks');
+*/
+Route::get('/', 'TasksController@index')->name('tasks');
 Route::get('tasks/create', 'TasksController@create');
 Route::post('tasks/create', 'TasksController@store');
 
