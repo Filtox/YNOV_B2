@@ -12,6 +12,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ URL::route('articles.index') }}">Articles <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::route('articles.create') }}">Nouvel article <span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ URL::route('contacts.create') }}">Create</a>
             </li>
