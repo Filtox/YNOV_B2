@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RecetteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('cuisine', '');
+Route::resource('cuisine', RecetteController::class);
+
+Route::get('cuisine/create', 'App\Http\Controllers\RecetteController@create');
+Route::post('cuisine/create', 'App\Http\Controllers\RecetteController@create');
