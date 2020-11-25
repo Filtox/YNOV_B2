@@ -15,6 +15,8 @@ class CreateRecettesTable extends Migration
     {
         Schema::create('recettes', function (Blueprint $table) {
             $table->id();
+            $table->text("titre");
+            $table->text("ingredients");
             $table->timestamps();
         });
     }

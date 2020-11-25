@@ -1,0 +1,12 @@
+Installation laravel :
+composer create-project --prefer-dist laravel/laravel:^7.0 NomProjet
+
+Modele + migration + factory + seeder + controller :
+php artisan make:model NomDuModele -a
+
+Ensuite, remplir tout ce qui est database :
+seeder, factory, migration
+
+Puis faire :
+php artisan migrate
+php artisan db:seed

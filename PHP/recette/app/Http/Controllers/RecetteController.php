@@ -12,9 +12,15 @@ class RecetteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->get("search");
+        if($search){
+            $recettes = Recette::where('titre', 'like', '%'.$search.'%')->get();
+        }else{
+            $recettes = Recette::all();
+        }
+        return view("recette.index", ["recettes" => $recettes, "search" => $search]);
     }
 
     /**
@@ -24,7 +30,7 @@ class RecetteController extends Controller
      */
     public function create()
     {
-        //
+        return view("recette.create");
     }
 
     /**
@@ -35,7 +41,14 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $titre = $request->input('titre');
+        $ingredients = $request->input('ingredients');
+
+        $recette = new Recette;
+        $recette->titre = $titre;
+        $recette->ingredients = $ingredients;
+        $recette->save();
+        return redirect()->route('recette.index');
     }
 
     /**
@@ -46,7 +59,7 @@ class RecetteController extends Controller
      */
     public function show(Recette $recette)
     {
-        //
+        return view("recette.show", ["recette" => $recette]);
     }
 
     /**
@@ -57,7 +70,7 @@ class RecetteController extends Controller
      */
     public function edit(Recette $recette)
     {
-        //
+        return view("recette.edit", ["recette" => $recette]);
     }
 
     /**
@@ -69,7 +82,14 @@ class RecetteController extends Controller
      */
     public function update(Request $request, Recette $recette)
     {
-        //
+        $titre = $request->input('titre');
+        $ingredients = $request->input('ingredients');
+
+        $article = Recette::find($recette->id);
+        $article->titre = $titre;
+        $article->ingredients = $ingredients;
+        $article->save();
+        return redirect()->route('recette.index');
     }
 
     /**
@@ -80,6 +100,12 @@ class RecetteController extends Controller
      */
     public function destroy(Recette $recette)
     {
-        //
+        $recette->delete();
+        return redirect()->route('recette.index');
+    }
+
+    public function details(int $id) {
+        $recette = Recette::find($id);
+        return view("recette.show", ["recette" => $recette]);
     }
 }

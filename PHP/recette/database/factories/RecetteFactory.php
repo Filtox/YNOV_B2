@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Recette::class, function (Faker $faker) {
     return [
-        //
+        'titre' => $faker->text(10),
+        'ingredients' => $faker->text(30)
     ];
 });
