@@ -1,22 +1,4 @@
-Installation laravel :
-composer create-project --prefer-dist laravel/laravel NOM_PROJET
-composer create-project --prefer-dist laravel/laravel:^7.0 NomProjet
-
-Migration base de données :
-php artisan migrate
-Rafraichir entièrement la base de données (attention supprime l'ensemble des données contenues dans vos tables)
-php artisan migrate:refresh
-
-Model + migration :
-php artisan make:model NomDuModele -m
-
-Modele + migration + factory + seeder + controller :
-php artisan make:model NomDuModele -a
-
-Controlleur :
-php artisan make:controller NomDuControlleur --model=NomDuModel
-
-Nous avons comme correspondance :
+Nous avons comme correspondance Controller :
 index : gère l'affichage de la page de listing des articles
 create : gère l'affichage de la page de création d'un article
 update : gère la création d'un article (suivant un formulaire de création par exemple)
@@ -24,12 +6,3 @@ show : gère l'affichage de la page d'un article
 edit : gère l'affichage de la page d'édition d'un article
 update : gère la modification d'un article (suivant un formulaire d'édition par exemple)
 delete : gère la suppression d'un article
-
-Creer un seed
-php artisan make:seeder NomDuSeeder
-
-Seeding
-php artisan db:seed
-
-Factory
-php artisan make:factory NomDeLaFactory --model=NomDuModel
