@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('restaurant', 'RestaurantController');
+
+Route::get('restaurant/{id}/details', "RestaurantController@details")
+    ->name("restaurant.details")
+    ->where("id", "[0-9]+");
