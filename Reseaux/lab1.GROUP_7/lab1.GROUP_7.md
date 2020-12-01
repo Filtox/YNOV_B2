@@ -75,7 +75,7 @@ La RFC qui définit qu'elles sont les adresses privées est la **1918** : https:
 Les préfixes des adresses ip disponibles sont **10.0.0.0/8**, **172.16.0.0/12** et **192.168.0.0/16**.<br>
 Les utilitées des adresses privées sont qu'elles sont pratiques dans les réseaux locaux, ou toute personne n'ayant pas besoin d'avoir une ip publique pour ses équipements. Elles sont aussi utiles pour pallier à la pénurie d'adresse ipv4. Le but de la division des adresses IP en trois classes A,B et C est de faciliter la recherche d'un ordinateur sur le réseau. En effet avec cette notation, il est possible de rechercher dans un premier temps le réseau que l'on désire atteindre puis de chercher un ordinateur sur celui-ci. Ainsi, l'attribution des adresses IP se fait selon la taille du réseau.
 
-Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port eth0 du OpenWRT qui correcpond au lan.
+Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port **eth0** du OpenWRT qui correcpond au lan.
 
 ___
 # Stage 5 :
@@ -110,7 +110,7 @@ mkdir sites-available
 mkdir sites-enabled
 ```
 
-Ensuite, il faut créer un fichier de condiguration dans le dossier */etc/nginx/sites-available* :
+Ensuite, il faut créer un fichier de configuration dans le dossier */etc/nginx/sites-available* :
 ```
 touch default.conf
 ```
@@ -174,7 +174,8 @@ Afin de vérifier que la page html et que le fichier html est accessible, il fau
 sudo ssh -L788:127.0.0.1:80 root@192.168.122.207 -p 722
 ```
 
-Puis ajouter une règle de redirection de port sur l'interface openWRT à l'adresse *http://127.0.0.1:788* avec comme paramètres : *Protocol :* TCP/UDP, *Source zone :* wan, *External port :* 780, *Destination zone :* lan, *Internal IP address :* Adresse de l'Alpine, *Internal port :* 780 :
+Puis ajouter une règle de redirection de port sur l'interface openWRT à l'adresse *http://127.0.0.1:788* avec comme paramètres : *Protocol :* **TCP/UDP**, *Source zone :* **wan**, *External port :* **780**, *Destination zone :* **lan**, *Internal IP address :* **Adresse de l'Alpine**, *Internal port :* **780** :<br>
+
 ![Port forwarding](images/port_forward.png)
 
 Cela fait, sur le navigateur de l'hôte, il faut se rendre sur l'adresse *192.168.122.207:780* où *192.168.122.207* est l'adresse de l'openWRT. Ici, le pdf sera accessible et téléchargeable.
@@ -194,8 +195,8 @@ Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, da
 ___
 ## stage 8 :
 
-Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.
-La RFC du protocole **SSH** est la **4251** : https://tools.ietf.org/html/rfc4251.
-Le protocole **HTTP** possède plusieurs RFC qui sont : RFC 1945, 2068, 2616, 7230 à 7237 et 7540.
-La RFC du protocole **IP** est la **791** : https://tools.ietf.org/html/rfc791.
-La RFC du protocole **Ethernet** est la **894** : https://tools.ietf.org/html/rfc894.
+Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.<br>
+La RFC du protocole **SSH** est la **4251** : https://tools.ietf.org/html/rfc4251.<br>
+Le protocole **HTTP** possède plusieurs RFC qui sont : RFC 1945, 2068, 2616, 7230 à 7237 et 7540.<br>
+La RFC du protocole **IP** est la **791** : https://tools.ietf.org/html/rfc791.<br>
+La RFC du protocole **Ethernet** est la **894** : https://tools.ietf.org/html/rfc894.<br>
