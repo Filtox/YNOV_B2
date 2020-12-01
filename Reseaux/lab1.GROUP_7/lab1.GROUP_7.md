@@ -80,7 +80,10 @@ Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le por
 ___
 # Stage 5 :
 
-Il faut editer l'interface réseau de l'alpine linux et décommenter les lignes de DHCP afin d'installer nginx.
+Il faut editer l'interface réseau de l'Alpine linux et décommenter les lignes de DHCP afin d'installer nginx.
+
+![DHCP](images/dhcp.png)
+
 Sur la console de Alpine Linux, faire une mise à jour dans un premier temps :
 ```
 apk update
@@ -96,7 +99,9 @@ fichier dl dans téléchargement.
 ___
 # Stage 6 :
 
-Il faut prendre un ethernet switch dans la gns3 , le glisser sur l'interface et le relier d'un côté à l'Alpine linux et de l'autre côté à l'openWRT sur le port eth0. Il faut ensuite editer la configuration réseau de l'Alpine et lui
+Il faut prendre un ethernet switch dans la gns3 , le glisser sur l'interface et le relier d'un côté à l'Alpine linux et de l'autre côté à l'openWRT sur le port eth0. Il faut ensuite editer la configuration réseau de l'Alpine linux et recommenter les lignes de DHCP et décommenter et attribuer l'IP statique *10.7.2.1*.
+
+![IP Statique](images/static.png)
 
 ___
 # Stage 7 :
