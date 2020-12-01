@@ -6,13 +6,13 @@ output:
 pdf_document: default
 
 ___
-# stage 1 :
+# Stage 1 :
 
 Pour commencer, ouvrir gns3 et créer un nouveau projet nommé Lab1. Dans ce projet, il faut importer un NAT et un OpenWrt. Il faut les renommer respctivement LeNat07 et Le Routeur.
 Ensuite, il faut mettre un lien entre les deux appareils, pour LeNat07, ce sera connecté en nat0 et pour Le Routeur, il faut le connecter en eth01, car il s'agit du port se connectant en WAN.
 
 ___
-# stage 2 :
+# Stage 2 :
 
 Avant d'installer openssh-server, il faut éxécuter la commande : 
 ```
@@ -44,30 +44,30 @@ ssh root@192.168.122.207 -p 722
 Les avantages de la clé ed25519 sont que la clé est plus courte et plus sécurisée. Elle prend aussi moins de ressources à chiffrer et déchiffrer.
 
 ___
-# stage 3 :
+# Stage 3 :
 
 Faire la commande suivante afin d'installer luci :
 ```
 okpg install luci
 ```
 
-Ensuite il suffit d'éditer le fichier /etc/config/uhttpd et de changer le 'list listen_http' de 0.0.0.0:80 à 127.0.0.1:80.
+Ensuite il suffit d'éditer le fichier */etc/config/uhttpd* et de changer le *list listen_http* de *0.0.0.0:80* à *127.0.0.1:80*.
 
-Dans le fichier /etc/ssh/sshd_config, il faut décommenter "AllowTcpForwarding yes" et "GatewayPorts yes".
+Dans le fichier */etc/ssh/sshd_config*, il faut décommenter *AllowTcpForwarding yes* et *GatewayPorts yes*.
 
 ![FORWARD](images/forward.png)
 
-Cela fait, il faut se connecter pour pouvoir tester le port forwarding :
+Cela fait, il faut se connecter pour pouvoir tester le port forwarding avec l'hôte :
 ```
 sudo ssh -L788:127.0.0.1:80 root@192.168.122.207 -p 722
 ```
 
-Ensuite, il faut se rendre sur un navigateur et entrer l'url 127.0.0.1:788, si tout fonctionne correctement, l'interface openwrt apparaitra.
+Ensuite, il faut se rendre sur un navigateur et entrer l'url *127.0.0.1:788*, si tout fonctionne correctement, l'interface openwrt apparaitra.
 
 ___
-## stage 4 :
+# Stage 4 :
 
-Pour la partie 4, il faut se rendre dans le fichier /etc/config/network, dans la partie **lan**, et éditer les options ipaddr et netmask pour mettre la nouvelle adresse qui est "10.7.0.1" et le masque qui est "255.255.0.0".
+Pour la partie 4, il faut se rendre dans le fichier */etc/config/network*, dans la partie **lan**, et éditer les options *ipaddr* et *netmask* pour mettre la nouvelle adresse qui est *10.7.0.1* et le masque qui est *255.255.0.0*.
 
 ![LAN](images/lan.png)
 
@@ -78,7 +78,7 @@ Les utilitées des adresses privées sont qu'elles pratique dans les réseaux lo
 Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port eth0 du OpenWRT qui correcpond au lan.
 
 ___
-## stage 5 :
+# Stage 5 :
 
 Il faut editer l'interface réseau de l'alpine linux et décommenter les lignes de DHCP afin d'installer nginx.
 Sur la console de Alpine Linux, faire une mise à jour dans un premier temps :
@@ -91,12 +91,12 @@ apk add nginx
 ```
 
 ___
-## stage 6 :
+# Stage 6 :
 
 fichier dl dans téléchargement.
 
 ___
-## stage 7 :
+# Stage 7 :
 
 Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans le première interface
 
