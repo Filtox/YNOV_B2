@@ -1,33 +1,31 @@
 title: ”B2 - Lab 1”
 author:
 - Pierre DA SILVA
-- Théo ARNAL
+- Théo ARNAL<br>
 output:
 pdf_document: default
 
----
+___
 ## stage 1 :
 
-Pour commencer, ouvrir gns3 et créer un nouveau projet nommé Lab1. Dans ce projet, il faut importer un NAT et un OpenWrt. Il faut les renommer respctivement LeNat07 et Le*Routeur.
-Ensuite, il faut mettre un lien entre les deux appareils, pour LeNat07, ce sera connecté en nat0 et pour Le*Routeur, il faut le connecter en eth01, car il s'agit du port se connectant en WAN.
+Pour commencer, ouvrir gns3 et créer un nouveau projet nommé Lab1. Dans ce projet, il faut importer un NAT et un OpenWrt. Il faut les renommer respctivement LeNat07 et Le Routeur.
+Ensuite, il faut mettre un lien entre les deux appareils, pour LeNat07, ce sera connecté en nat0 et pour Le Routeur, il faut le connecter en eth01, car il s'agit du port se connectant en WAN.
 
----
+___
 ## stage 2 :
 
 Avant d'installer openssh-server, il faut éxécuter la commande : 
 ```
 opkg update
 ```
-afin d'obtenir la mise à jour des listes, ensuite faire
+afin d'obtenir la mise à jour des listes, ensuite faire :
 ```
 opkg install openssh-server
 ```
-Ensuite il faut editer le firewall dans
-```
-etc/config/firewall
-```
-Il faut ajouter une règle pour pouvoir se connecter en SSH.<br>
-![Firewall](images/firewall.png)
+Ensuite il faut editer le firewall dans *'*etc/config/firewall*
+
+Il faut ajouter une règle pour pouvoir se connecter en SSH.<br><br>
+![Firewall](images/firewall.png)<br><br>
 Cela étant fait, il faut redémarrer le firewall avec la commande :
 ```
 service firewall restart
