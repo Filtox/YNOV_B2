@@ -92,9 +92,92 @@ Puis installer nginx :
 ```
 apk add nginx
 ```
+Puis installer curl :
+```
+apk add curl
+```
 
-fichier dl dans téléchargement.
+Pour pouvoir démarrer nginx, il faut créer le dossier run nginx et creer le fichier pid, puis enfin il faut lancer nginx :
+```
+mkdir -p /run/nginx
+touch /run/nginx/nginx.pid
+nginx
+```
 
+Dans le dossier */etc/nginx/*, il faut créer les dossiers pour les configurations de sites :
+```
+mkdir sites-available
+mkdir sites-enabled
+```
+
+Ensuite, il faut créer un fichier de condiguration dans le dossier */etc/nginx/sites-available* :
+```
+touch default.conf
+```
+puis l'éditer :
+```
+vi default.conf
+```
+et remplir comme ceci :
+```
+server {
+        listen 880;
+        listen [::]:880;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+```
+
+Ensuite il faut créer un lien symbolique entre les deux fichiers de configuration de *sites-enabled* et *sites-available* :
+```
+ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
+```
+
+Maintenant, il faut créer le fichier html où sera indexé le fichier pdf dans le dossier */var/www*. Il faut créer le dossier html d'abord, puis créer le fichier html, puis l'éditer :
+```
+mkdir html
+touch html/index.html
+vi html/index.html
+```
+Remplir comme celà :
+```
+<!doctype html>
+	<html lang=”en”>
+	<head>
+		<meta charset=”utf-8”>
+		<title>The HTML5 Herald</title>
+		<meta name=”description” content=”The HTML5 Herald”>
+		<meta name=”author” content=”SitePoint”>
+	</head>
+	<body>
+		<a href=”./pocorgtfo01.pdf”>issue 1</a>
+	</body>
+	</html>
+```
+
+Il existe deux moyens de télécharger le fichier pdf : **curl** et **wget**. Les commandes sont :
+```
+curl -L https://openwall.info/wiki/_media/people/solar/pocorgtfo01.pdf > pocorgtfo01.pdf
+
+wget -O pocorgtfo01.pdf https://openwall.info/wiki/_media/people/solar/pocorgtfo01.pdf
+```
+
+Afin de vérifier que la page html et que le fichier html est accessible, il faut se connecter SSH depuis l'hôte :
+```
+sudo ssh -L788:127.0.0.1:80 root@192.168.122.207 -p 722
+```
+
+Puis ajouter une règle de redirection de port sur l'interface openWRT à l'adresse *http://127.0.0.1:788* avec comme paramètres : *Protocol :* TCP/UDP, *Source zone :* wan, *External port :* 780, *Destination zone :* lan, *Internal IP address :* Adresse de l'Alpine, *Internal port :* 780 :
+![Port forwarding](images/port_forward.png)
+
+Cela fait, sur le navigateur de l'hôte, il faut se rendre sur l'adresse *192.168.122.207:780* où *192.168.122.207* est l'adresse de l'openWRT. Ici, le pdf sera accessible et téléchargeable.
 
 ___
 # Stage 6 :
@@ -107,8 +190,6 @@ ___
 # Stage 7 :
 
 Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans la première interface
-
-
 
 ___
 ## stage 8 :
