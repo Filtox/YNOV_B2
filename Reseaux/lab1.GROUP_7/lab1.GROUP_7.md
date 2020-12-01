@@ -191,7 +191,9 @@ Il faut prendre un ethernet switch dans la gns3 , le glisser sur l'interface et 
 ___
 # Stage 7 :
 
-Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans la première interface
+Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans les deux interfaces, il faut mettre le protocole sur **Static address**. La première interface aura le paramètre *Interface* sur **eth2** et l'autre interface sur **eth3**. Pour la première interface, l'adresse IpV4 va être celle de la premiere Alpine linux : **10.7.2.1**. Le netmask est **255.255.0.0**, le gateway est **10.7.0.1**. La deuxième aura pour adresse IpV4 la deuxième alpine linux : **10.7.1.1**. Le netmask et le gateway sont les mêmes que précédement.
+
+![Curl du fichier](images/7.png)
 
 ___
 ## stage 8 :
