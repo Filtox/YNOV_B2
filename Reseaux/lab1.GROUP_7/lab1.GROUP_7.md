@@ -71,9 +71,9 @@ Pour la partie 4, il faut se rendre dans le fichier */etc/config/network*, dans 
 
 ![LAN](images/lan.png)
 
-La RFC qui définit qu'elles sont les les adresses privées est la 1918.
-Les préfixes des adresses ip disponibles sont 10.0.0.0/8, 172.16.0.0/12 et 192.168.0.0/16.
-Les utilitées des adresses privées sont qu'elles pratique dans les réseaux locaux ou toute personne n'ayant pas besoin d'avoir une ip publique pour ses équipements. Elles sont aussi utiles pour pallier à la pénurie d'adresse ipv4. Le but de la division des adresses IP en trois classes A,B et C est de faciliter la recherche d'un ordinateur sur le réseau. En effet avec cette notation, il est possible de rechercher dans un premier temps le réseau que l'on désire atteindre puis de chercher un ordinateur sur celui-ci. Ainsi, l'attribution des adresses IP se fait selon la taille du réseau.
+La RFC qui définit qu'elles sont les les adresses privées est la **1918**.<br>
+Les préfixes des adresses ip disponibles sont **10.0.0.0/8**, **172.16.0.0/12** et **192.168.0.0/16**.<br>
+Les utilitées des adresses privées sont qu'elles sont pratiques dans les réseaux locaux, ou toute personne n'ayant pas besoin d'avoir une ip publique pour ses équipements. Elles sont aussi utiles pour pallier à la pénurie d'adresse ipv4. Le but de la division des adresses IP en trois classes A,B et C est de faciliter la recherche d'un ordinateur sur le réseau. En effet avec cette notation, il est possible de rechercher dans un premier temps le réseau que l'on désire atteindre puis de chercher un ordinateur sur celui-ci. Ainsi, l'attribution des adresses IP se fait selon la taille du réseau.
 
 Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port eth0 du OpenWRT qui correcpond au lan.
 
@@ -90,10 +90,13 @@ Puis installer nginx :
 apk add nginx
 ```
 
+fichier dl dans téléchargement.
+
+
 ___
 # Stage 6 :
 
-fichier dl dans téléchargement.
+Il faut prendre un ethernet switch dans la gns3 , le glisser sur l'interface et le relier d'un côté à l'Alpine linux et de l'autre côté à l'openWRT sur le port eth0. Il faut ensuite editer la configuration réseau de l'Alpine et lui
 
 ___
 # Stage 7 :
