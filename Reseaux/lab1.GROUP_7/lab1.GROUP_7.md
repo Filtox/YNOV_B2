@@ -174,7 +174,8 @@ Afin de vérifier que la page html et que le fichier html est accessible, il fau
 sudo ssh -L788:127.0.0.1:80 root@192.168.122.207 -p 722
 ```
 
-Puis ajouter une règle de redirection de port sur l'interface openWRT à l'adresse *http://127.0.0.1:788* avec comme paramètres : *Protocol :* **TCP/UDP**, *Source zone :* **wan**, *External port :* **780**, *Destination zone :* **lan**, *Internal IP address :* **Adresse de l'Alpine**, *Internal port :* **780** :<br>
+Puis ajouter une règle de redirection de port sur l'interface openWRT à l'adresse *http://127.0.0.1:788* avec comme paramètres :<br>
+*Protocol :* **TCP/UDP**, *Source zone :* **wan**, *External port :* **780**, *Destination zone :* **lan**, *Internal IP address :* **Adresse de l'Alpine**, *Internal port :* **780** :<br>
 
 ![Port forwarding](images/port_forward.png)
 
@@ -195,7 +196,7 @@ Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, da
 ___
 ## stage 8 :
 
-Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.<br>
+Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.<br><br>
 La RFC du protocole **SSH** est la **4251** : https://tools.ietf.org/html/rfc4251.<br>
 Le protocole **HTTP** possède plusieurs RFC qui sont : RFC 1945, 2068, 2616, 7230 à 7237 et 7540.<br>
 La RFC du protocole **IP** est la **791** : https://tools.ietf.org/html/rfc791.<br>
