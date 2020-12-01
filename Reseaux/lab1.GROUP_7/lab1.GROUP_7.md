@@ -106,14 +106,15 @@ Il faut prendre un ethernet switch dans la gns3 , le glisser sur l'interface et 
 ___
 # Stage 7 :
 
-Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans le première interface
+Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans la première interface
 
 
 
 ___
 ## stage 8 :
 
-ssh -> rfc 4251
-http -> rfc 1945, 2068, 2616, 7230 à 7237, 7540
-ip -> rfc 791
-ethernet -> 894
+Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.
+La RFC du protocole **SSH** est la **4251** : https://tools.ietf.org/html/rfc4251.
+Le protocole **HTTP** possède plusieurs RFC qui sont : RFC 1945, 2068, 2616, 7230 à 7237 et 7540.
+La RFC du protocole **IP** est la **791** : https://tools.ietf.org/html/rfc791.
+La RFC du protocole **Ethernet** est la **894** : https://tools.ietf.org/html/rfc894.
