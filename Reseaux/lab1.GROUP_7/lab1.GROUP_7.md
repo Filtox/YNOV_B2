@@ -6,13 +6,13 @@ output:
 pdf_document: default
 
 ___
-## stage 1 :
+# stage 1 :
 
 Pour commencer, ouvrir gns3 et créer un nouveau projet nommé Lab1. Dans ce projet, il faut importer un NAT et un OpenWrt. Il faut les renommer respctivement LeNat07 et Le Routeur.
 Ensuite, il faut mettre un lien entre les deux appareils, pour LeNat07, ce sera connecté en nat0 et pour Le Routeur, il faut le connecter en eth01, car il s'agit du port se connectant en WAN.
 
 ___
-## stage 2 :
+# stage 2 :
 
 Avant d'installer openssh-server, il faut éxécuter la commande : 
 ```
@@ -34,7 +34,7 @@ Il faut changer le port dans le fichier */etc/ssh/sshd_config*, il suffit de dé
 Ensuite, sur la machine hôte, il faut générer une clé :<br><br>
 ![Clé](images/keygen.png)
 
-Il faut vérifier que la connexion fonctionne, pour cela, sur la machine hôte, il faut éxécuter la commande ;
+Il faut vérifier que la connexion fonctionne, pour cela, sur la machine hôte, il faut éxécuter la commande :
 ```
 ssh root@192.168.122.207 -p 722
 ```
@@ -44,7 +44,7 @@ ssh root@192.168.122.207 -p 722
 Les avantages de la clé ed25519 sont que la clé est plus courte et plus sécurisée. Elle prend aussi moins de ressources à chiffrer et déchiffrer.
 
 ___
-## stage 3 :
+# stage 3 :
 
 Faire la commande suivante afin d'installer luci :
 ```
