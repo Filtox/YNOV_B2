@@ -22,18 +22,16 @@ afin d'obtenir la mise à jour des listes, ensuite faire :
 ```
 opkg install openssh-server
 ```
-Ensuite il faut editer le firewall dans *'*etc/config/firewall*
-
-Il faut ajouter une règle pour pouvoir se connecter en SSH.<br><br>
+Ensuite il faut editer le firewall dans *etc/config/firewall*. Il faut ajouter une règle pour pouvoir se connecter en SSH.<br><br>
 ![Firewall](images/firewall.png)<br><br>
 Cela étant fait, il faut redémarrer le firewall avec la commande :
 ```
 service firewall restart
 ```
 
-Il faut changer le port dans le fichier /etc/ssh/sshd_config, il suffit de décommenter la ligne 13 et remplacer le port 22 par 722.
+Il faut changer le port dans le fichier */etc/ssh/sshd_config*, il suffit de décommenter la ligne 13 et remplacer le port **22** par **722**.
 
-Ensuite, sur la machine hôte, il faut générer une clé :<br>
+Ensuite, sur la machine hôte, il faut générer une clé :<br><br>
 ![Clé](images/keygen.png)
 
 Il faut vérifier que la connexion fonctionne, pour cela, sur la machine hôte, il faut éxécuter la commande ;
