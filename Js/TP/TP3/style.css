@@ -3,3 +3,7 @@ div{
     border: 1px solid #000;
     padding: 16px;
 }
+
+button {
+    border: 1px 50% solid;
+}
