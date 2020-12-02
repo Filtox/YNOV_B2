@@ -193,7 +193,10 @@ ___
 
 Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans les deux interfaces, il faut mettre le protocole sur **Static address**. La première interface aura le paramètre *Interface* sur **eth2** et l'autre interface sur **eth3**. Pour la première interface, l'adresse IpV4 va être celle de la premiere Alpine linux : **10.7.2.1**. Le netmask est **255.255.0.0**, le gateway est **10.7.0.1**. La deuxième aura pour adresse IpV4 la deuxième alpine linux : **10.7.1.1**. Le netmask et le gateway sont les mêmes que précédement.
 
-Après celà, il faut ajouter une Alpine Linux et lui attribuer une ip statique qui est 10.7.
+Après celà, il faut ajouter une Alpine Linux, la connecter au switch en DHCP dans un temps pour télécharger curl. Quand celà est fait, il faut lui attribuer une ip statique qui est 10.7.1.1 :<br><br>
+![Ip Statique alpine linux 2](images/7_1.png)
+
+Ensuite il faut télécharger le fichier :
 
 ![Curl du fichier](images/7.png)
 
@@ -202,6 +205,10 @@ ___
 
 Pour ce lab, les protocoles **SSH**, **HTTP**, **IP** et **Ethernet** ont été utilisés.<br><br>
 La RFC du protocole **SSH** est la **4251** : https://tools.ietf.org/html/rfc4251.<br>
+Le protocole SSH est un protocole de communication sécurisé. Il est utilisé pour l'accès à distance.<br><br>
 Le protocole **HTTP** possède plusieurs RFC qui sont : RFC 1945, 2068, 2616, 7230 à 7237 et 7540.<br>
-La RFC du protocole **IP** est la **791** : https://tools.ietf.org/html/rfc791.<br>
+Le protocole HTTP est un protocole de communication client-serveur. Les clients HTTP les plus connus sont les navigateurs Web.<br><br>
+La RFC des protocoles **IP** est la **791** : https://tools.ietf.org/html/rfc791.<br>
+Le protocole IP est une famille de protocole de communication de réseaux informatiques. Lors d'une communication entre deux postes, le flux de données provenant de la couche de transport est encapsulé dans des paquets par le protocole IP.<br><br>
 La RFC du protocole **Ethernet** est la **894** : https://tools.ietf.org/html/rfc894.<br>
+Le protocole Ethernet est un protocole de réseau local à communications de paquets.
