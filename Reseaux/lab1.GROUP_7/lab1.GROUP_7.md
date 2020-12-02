@@ -75,7 +75,7 @@ La RFC qui définit qu'elles sont les adresses privées est la **1918** : https:
 Les préfixes des adresses ip disponibles sont **10.0.0.0/8**, **172.16.0.0/12** et **192.168.0.0/16**.<br>
 Les utilitées des adresses privées sont qu'elles sont pratiques dans les réseaux locaux, ou toute personne n'ayant pas besoin d'avoir une ip publique pour ses équipements. Elles sont aussi utiles pour pallier à la pénurie d'adresse ipv4. Le but de la division des adresses IP en trois classes A,B et C est de faciliter la recherche d'un ordinateur sur le réseau. En effet avec cette notation, il est possible de rechercher dans un premier temps le réseau que l'on désire atteindre puis de chercher un ordinateur sur celui-ci. Ainsi, l'attribution des adresses IP se fait selon la taille du réseau.
 
-Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port **eth0** du OpenWRT qui correcpond au lan.
+Il faut ensuite ajouter un Alpine Linux et le connecter avec un cable sur le port **eth0** du OpenWRT qui correspond au lan.
 
 ___
 # Stage 5 :
