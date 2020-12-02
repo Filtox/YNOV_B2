@@ -54,9 +54,13 @@ okpg install luci
 
 Ensuite il suffit d'éditer le fichier */etc/config/uhttpd* et de changer le *list listen_http* de *0.0.0.0:80* à *127.0.0.1:80*.
 
+Les deux façons d'écouter en en localhost sont localhost et 127.0.0.1.
+
 Dans le fichier */etc/ssh/sshd_config*, il faut décommenter *AllowTcpForwarding yes* et *GatewayPorts yes*.
 
 ![FORWARD](images/forward.png)
+
+Le port forwarding consiste à rediriger des paquets réseaux reçus sur un port donné d'un ordinateur ou un équipement réseau vers un autre ordinateur ou équipement réseau sur un port donné.
 
 Cela fait, il faut se connecter pour pouvoir tester le port forwarding avec l'hôte :
 ```
