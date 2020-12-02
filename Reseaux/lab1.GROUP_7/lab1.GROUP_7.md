@@ -1,10 +1,11 @@
+---
 title: ”B2 - Lab 1”
 author:
 - Pierre DA SILVA
-- Théo ARNAL<br>
+- Théo ARNAL
 output:
 pdf_document: default
-
+---
 ___
 # Stage 1 :
 
