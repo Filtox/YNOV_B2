@@ -121,8 +121,8 @@ vi default.conf
 et remplir comme ceci :
 ```
 server {
-        listen 880;
-        listen [::]:880;
+        listen 780;
+        listen [::]:780;
 
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
@@ -192,6 +192,8 @@ ___
 # Stage 7 :
 
 Pour créer deux sous-réseaux, il faut se rendre sur l'interface de openwrt, dans **Network** -> **Interfaces** et créer deux nouvelles interfaces. Dans les deux interfaces, il faut mettre le protocole sur **Static address**. La première interface aura le paramètre *Interface* sur **eth2** et l'autre interface sur **eth3**. Pour la première interface, l'adresse IpV4 va être celle de la premiere Alpine linux : **10.7.2.1**. Le netmask est **255.255.0.0**, le gateway est **10.7.0.1**. La deuxième aura pour adresse IpV4 la deuxième alpine linux : **10.7.1.1**. Le netmask et le gateway sont les mêmes que précédement.
+
+Après celà, il faut ajouter une Alpine Linux et lui attribuer une ip statique qui est 10.7.
 
 ![Curl du fichier](images/7.png)
 
