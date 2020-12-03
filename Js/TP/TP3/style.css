@@ -7,3 +7,7 @@ div{
 button {
     border: 1px 50% solid;
 }
+
+p {
+    font-family: sans-serif;
+}

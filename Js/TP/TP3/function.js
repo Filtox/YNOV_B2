@@ -61,6 +61,8 @@ function createMatch(matchData, showDate = false) {
 
     let btnElement = document.createElement('button');
     btnElement.innerText = "Supprimer ce match";
+    btnElement.style.color = "red";
+    btnElement.style.backgroundColor = "whitesmoke";
     btnElement.addEventListener("click", function () {
         api.deleteMatch(matchData.id);
     });

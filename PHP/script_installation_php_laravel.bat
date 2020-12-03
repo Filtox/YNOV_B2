@@ -1,4 +1,3 @@
-REM faire comme composRep et composCloned pour les autres
 @echo off
 :accueil
 echo A qu'elle ‚tape voulez vous rendre ?
