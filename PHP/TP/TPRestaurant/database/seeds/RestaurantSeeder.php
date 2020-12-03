@@ -25,7 +25,7 @@ class RestaurantSeeder extends Seeder
                 "etat" => "Ouvert"
             ]
         ]);
-     
+        
         factory(Restaurant::class, 20)->create()->each(function ($restaurant) {
             $restaurant->save();
         });
