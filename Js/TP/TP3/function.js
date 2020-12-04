@@ -36,6 +36,7 @@ function addMatchForm(team1, team2, score, date, bouttonText, action) {
             date: date == "" ? new Date() : date,
         });
     });
+
     return form;
 };
 
@@ -56,9 +57,20 @@ function createMatch(matchData, showDate = false) {
     scoreElement.innerText = matchData.score.join(" à ");
     team2Element.innerText = matchData.visitorTeam;
 
-    divElement.appendChild(team1Element);
-    divElement.appendChild(scoreElement);
-    divElement.appendChild(team2Element);
+    let tableElement = document.createElement("table");
+    let trElement = document.createElement("tr");
+    let tdElement = document.createElement("td");
+    let tdElement2 = document.createElement("td");
+    let tdElement3 = document.createElement("td");
+    
+    divElement.appendChild(tableElement);
+    tableElement.appendChild(trElement);
+    trElement.appendChild(tdElement);
+    trElement.appendChild(tdElement2);
+    trElement.appendChild(tdElement3);
+    tdElement.appendChild(team1Element);
+    tdElement2.appendChild(scoreElement);
+    tdElement3.appendChild(team2Element);
 
     let btnElement = document.createElement('button');
     btnElement.innerText = "Supprimer ce match";
