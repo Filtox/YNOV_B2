@@ -1,4 +1,4 @@
-div{
+.divMatch {
     margin: 16px;
     border: 1px solid #000;
     padding: 16px;
@@ -10,4 +10,127 @@ button {
 
 p {
     font-family: sans-serif;
+}
+
+.delete {
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid red;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+.delete:hover {
+    background-color: red;
+    color: white;
+}
+
+.afficher {
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid #4695ab;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+.afficher:hover {
+    background-color: #4695ab;
+    color: white;
+}
+
+.editer {
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid #608a5b;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+.editer:hover {
+    background-color: #608a5b;
+    color: white;
+}
+
+table {
+    border: medium solid #6495ed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    font-family: monospace;
+    border: thin solid #6495ed;
+    width: 50%;
+    padding: 5px;
+    background-color: #D0E3FA;
+}
+
+td {
+    font-family: sans-serif;
+    border: thin solid #6495ed;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+caption {
+    font-family: sans-serif;
+}
+
+#AjouterMatch {
+    width: 40%;;
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid #608a5b;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+#AjouterMatch:hover {
+    background-color: #608a5b;
+    color: white;
+}
+
+#VoirMatchBoutton {
+    width: 40%;;
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid #2d94bd;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+#VoirMatchBoutton:hover {
+    background-color: #2d94bd;
+    color: white;
+}
+
+input {
+    width: 500px;
+}
+
+.plus {
+    color: black;
+    background-color: white;
+    padding: 10px 10px;
+    border: 2px solid #608a5b;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.33s;
+}
+
+.lus:hover {
+    background-color: #608a5b;
+    color: white;
 }

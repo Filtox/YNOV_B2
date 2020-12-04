@@ -14,9 +14,18 @@ public class Vehicle {
     }
 
     private String registration;
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(!(obj instanceof Vehicle)){
+            return false;
+        } else{
+            return this.registration.equals(((Vehicle) obj).registration);
+        }
+    }
 }

@@ -41,6 +41,7 @@ function addMatchForm(team1, team2, score, date, bouttonText, action) {
 
 function createMatch(matchData, showDate = false) {
     let divElement = document.createElement("div");
+    divElement.classList.add("divMatch");
     let team1Element = document.createElement("p");
     let scoreElement = document.createElement("p");
     let team2Element = document.createElement("p");
@@ -61,8 +62,7 @@ function createMatch(matchData, showDate = false) {
 
     let btnElement = document.createElement('button');
     btnElement.innerText = "Supprimer ce match";
-    btnElement.style.color = "red";
-    btnElement.style.backgroundColor = "whitesmoke";
+    btnElement.classList.add("delete");
     btnElement.addEventListener("click", function () {
         api.deleteMatch(matchData.id);
     });
@@ -71,6 +71,7 @@ function createMatch(matchData, showDate = false) {
 
     let btnElement2 = document.createElement('button');
     btnElement2.innerText = "Afficher ce match";
+    btnElement2.classList.add("afficher");
     btnElement2.addEventListener("click", function () {
         let idMatch = matchData.id;
         app.innerHTML = "Id match: " + idMatch;
@@ -84,6 +85,7 @@ function createMatch(matchData, showDate = false) {
 
     let btnElement3 = document.createElement('button');
     btnElement3.innerText = "Editer ce match";
+    btnElement3.classList.add("editer");
     btnElement3.addEventListener('click', function () {
         let form = addMatchForm(
             matchData.homeTeam,
@@ -118,6 +120,7 @@ function getMatch(offset) {
         }).then(() => {
             let matchPlus = document.createElement("button");
             matchPlus.innerText = "Plus";
+            matchPlus.classList.add("plus");
             app.appendChild(matchPlus);
             matchPlus.addEventListener('click', () => {
                 offset += 1;
