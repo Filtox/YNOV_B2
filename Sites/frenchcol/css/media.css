@@ -1,0 +1,37 @@
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+    .top-left {font-size: 17px;}
+    .top-right {font-size: 12px;}
+    .top-right1 {font-size: 12px; right: 60px;}
+    .a1 {right: 90px;}
+    .center-block1 {margin-left: 35%;}
+    .img-2 {width: 75%; box-sizing: border-box;}
+    .img-4 {width: 300px; height: auto;}
+    .centered {font-size: 36px; top: 12%;}
+    .centered-date {font-size: 22px; top: 7%;}
+    .centered-countdown-jours {font-size: 40px; top: 20%; left: 40%}
+    .centered-countdown-heures {font-size: 40px; top: 20%; left: 55%}
+    .centered-countdown-minutes {font-size: 40px; top: 20%; left: 70%}
+    .centered-countdown-secondes {font-size: 40px; top: 20%; left: 85%}
+    .centered-eventpage {top: 30%; left: 50%;}
+    label { font-size: 10px;}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .top-left {font-size: 32px;}
+    .top-right {font-size: 18px;}
+    .top-right1 {font-size: 18px; right: 150px;}
+    .a1 {right: 130px;}
+    .center-block1 {margin-right: 50%; margin-left: 50%;}
+    .img-2 {width: 700px;}
+    .img-4 {width: 500px; height: auto;}
+    .centered {font-size: 180px; top: 35%;}
+    .centered-date {font-size: 25px; top: 25%; font-weight: 500;}
+    .centered-countdown-jours {font-size: 80px; top: 60%; left: 36%; font-weight: 500;}
+    .centered-countdown-heures {font-size: 80px; top: 60%; left: 46%; font-weight: 500;}
+    .centered-countdown-minutes {font-size: 80px; top: 60%; left: 56%; font-weight: 500;}
+    .centered-countdown-secondes {font-size: 80px; top: 60%; left: 66%; font-weight: 500;}
+    .centered-eventpage {top: 70%; left: 50%; background-color: white; text-align: center; vertical-align: middle; font-weight: 600;}
+    label {font-size: 22px;}
+}
