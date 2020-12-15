@@ -1,0 +1,24 @@
+@extends('layouts.template')
+
+
+@section('titre')
+    
+@endsection
+
+
+@section('contenue')
+    <div class="card text-center">
+        <div class="card-header">
+            {{ $restaurant->nom }}
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">{{ $restaurant->nom }}</h5>
+        <p class="card-text"> Adresse : {{ $restaurant->adresse }}</p>
+        <p class="card-text"> Adresse : {{ $restaurant->adresse }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+        2 days ago
+        </div>
+    </div>
+@endsection
