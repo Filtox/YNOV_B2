@@ -13,10 +13,13 @@ class LivreurController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$livreurs = Livreur::all();
-        //return view('livreurs.index', ['livreurs' => $livreurs]);
+        return view('livreurs.index',
+        [
+            'restaurant' => Restaurant::find($request->get('restaurant')),
+            'livreurs' => Livreur::all()
+        ]);
     }
 
     /**
@@ -41,15 +44,7 @@ class LivreurController extends Controller
      */
     public function store(Request $request)
     {
-        $nom = $request->input('nom');
-        $restaurant_id = $request->input('restaurant_id');
-
-        $livreur = new Livreur;
-        $livreur->nom = $nom;
-        $livreur->restaurant_id = $restaurant_id;
-
-        $livreur->save();
-        return redirect()->route('restaurants.index');
+        //
     }
 
     /**

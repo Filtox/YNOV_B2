@@ -24,9 +24,9 @@
                 {{$employe->prenom}}.
             @endforeach </p> 
         <a href="{{ route('restaurants.edit', $restaurant->id) }}" class="btn btn-primary">Modifier</a>
-        <a href="{{ route('employes.create', ["restaurant_id"=>$restaurant->id]) }}" class="btn btn-success">Add Emp</a>
+        <a href="{{ route('employes.create', ['restaurant_id'=>$restaurant->id]) }}" class="btn btn-success">Add Emp</a>
 
-        <a href="{{ route('livreurs.create', ["restaurant_id"=>$restaurant->id]) }}" class="btn btn-success">Add Livreur</a>
+        <a href="{{ route('livreurs.index', ['restaurant_id'=>$restaurant->id]) }}" class="btn btn-success">Ajouter Livreurs</a>
 
 
         <a href="{{ route('restaurants.destroy', $restaurant) }}" class="btn btn-danger">DELETE</a>

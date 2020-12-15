@@ -1,23 +1,23 @@
 @extends('layouts.template3')
 
 @section('titre')
-    Livreur
+Livreur
 @endsection
 
 @section('contenue')
+<form>
+    @csrf
+    @foreach($livreurs as $livreur)
+    <div class="mb-3 form-check">
 
-    @foreach ($livreurs as $livreur)
-
-    <tr>
-        <th scope="row">{{ $livreur->nom }}</th>
-        <td><a href=" {{ route("livreurs.show", $livreur->id) }} " class="btn btn-primary">Details</a></td>
-        <td><a href=" {{ route("livreurs.edit", $livreur) }} " class="btn btn-primary">Modifier</a></td>
-        <td><form action="{{ route('livreurs.destroy', $livreur) }}" method="POST"> 
-            @csrf 
-            @method('DELETE') 
-            <input type="submit" value="Supprimer"></form></td>
-    </tr>
-
+        <input class="form-check-input" type="checkbox" id="livreur-{{ $livreur->id }}" value="{{ $livreur->id }}" name="livreur[]" @foreach($livreur->restaurants as $resto)
+        @if($resto->id == $restaurant->id) checked @endif
+        @endforeach>
+        <label class="form-check-label" for="livreur-{{ $livreur->id }}">
+            {{ $livreur->nom }}
+        </label>
+    </div>
     @endforeach
-    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 @endsection
