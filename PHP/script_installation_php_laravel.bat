@@ -207,12 +207,6 @@ echo Ex‚cution de composer install
 call composer install
 echo.
 echo.
-echo.
-echo Ex‚cution de npm install
-echo.
-call npm install
-echo.
-echo.
 echo Copie du fichier .env.example en .env
 copy .env.example .env
 echo.
@@ -295,7 +289,7 @@ echo.
 :base
 cd %dossier%
 echo.
-echo Assurez-vous que votre base de donn‚es soit bien d‚marr‚e avant de faire la migration
+echo Assurez-vous que votre base de donn‚es soit bien d‚marr‚e avant de faire la migration. Veuillez remplir votre fichier .env avant de continuer
 pause
 echo.
 echo Migration de la base de donn‚es
