@@ -1,3 +1,0 @@
-# SitePerso
-
-http://pierredasilva.fr/
