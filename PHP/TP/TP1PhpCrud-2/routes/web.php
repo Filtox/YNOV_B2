@@ -38,3 +38,8 @@ Route::get("testmanytomany", function () {
 
 
 });
+
+Route::resource("mail", "MailController");
+Route::get("mails/confirm", function() {
+  return view('mails.confirm');
+});
