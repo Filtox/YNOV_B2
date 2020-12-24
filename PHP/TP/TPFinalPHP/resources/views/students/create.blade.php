@@ -12,7 +12,7 @@ Création d'un élève
         <label class="create" for="prenom">Prénom : </label>
         <input name="prenom" id="prenom" class="form-control" required="required"><br>
         <label class="create" for="email">Email : </label>
-        <input name="email" id="email" class="form-control" required="required"><br>
+        <input type="email" name="email" id="email" class="form-control" required="required"><br>
         <br>
         <h4 style="margin-bottom: 30px;">Promotion</h4>
         <div class="box">

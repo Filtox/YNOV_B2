@@ -7,7 +7,6 @@ Elève : {{ $student->nom }} {{ $student->prenom }}
 <div class="container text-center">
     <div class="card-header">Elève : {{ $student->nom }} {{ $student->prenom }}</div>
     <div class="card-header">Promotion de l'élève : {{ $student->promotions['nom'] }} {{ $student->promotions['specialite'] }}</div>
-    
     <div class="card-body">
         <table class="table" id="cssTable">
             <thead class="table-dark">

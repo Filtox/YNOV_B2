@@ -11,6 +11,7 @@ Elèves
                 <th scope="col">Noms</th>
                 <th scope="col">Prénoms</th>
                 <th scope="col">Emails</th>
+                <th scope="col">Promotion</th>
                 <th scope="col" colspan="3">Actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@ Elèves
                 <td>{{ $student->nom }}</td>
                 <td>{{ $student->prenom }}</td>
                 <td>{{ $student->email }}</td>
+                <td>{{ $student->promotions['nom'] }}</td>
                 <td><a href=" {{ route('students.show', ['student' => $student]) }} " class="btn detail btn-primary">Details</a></td>
                 <td><a href=" {{ route('students.edit', ['student' => $student]) }} " class="btn modif btn-primary">Modifier</a></td>
                 <td>
