@@ -24,9 +24,10 @@ class StudentController extends Controller
             ->get();
         } else {
             $students = Student::all();
+            $promotions = Promotion::all();
         }
 
-        return view("students.index", ['students' => $students]);
+        return view("students.index", ['students' => $students, 'promotions' => $promotions]);
     }
 
     /**

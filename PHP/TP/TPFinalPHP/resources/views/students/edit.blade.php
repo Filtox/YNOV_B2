@@ -33,7 +33,13 @@ Modification elève
                 </select>
             </div>
         </div>
-        <div>
+        <br>
+        @if ($modules->isEmpty())
+        <div class="container text-center">
+            <div class="card-header">Pas de module créé</div>
+        </div><br><br>
+    @else
+        <div>    
             <h4>Modules</h4>
             @foreach($modules as $module)
             <label style="display:block">
@@ -45,6 +51,7 @@ Modification elève
             </label>
             @endforeach
         </div>
+        @endif
         <div class="wrapper">
             <button type="submit" class="btn detail btn-primary">Valider</button>
         </div>

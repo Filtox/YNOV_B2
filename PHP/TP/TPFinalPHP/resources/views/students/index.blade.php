@@ -3,6 +3,17 @@
 Elèves
 @endsection
 @section('page-content')
+@if($promotions->isEmpty())
+<div class="container text-center">
+    <div class="card-header">Veuillez créer une promotion avant de créer des élèves</div>
+</div>
+@else
+@if($students->isEmpty())
+<div class="container text-center">
+    <div class="card-header">Veuillez créer un élève pour obtenir l'affichage des élèves</div>
+    <div class="row"><a class="ajout" href="{{ route('students.create') }}">Créer un élève</a></div>
+</div>
+@else
 <div class="container">
     <div class="row"><a class="ajout" href="{{ route('students.create') }}">Créer un élève</a></div>
     <table class="table" id="cssTable">
@@ -36,4 +47,6 @@ Elèves
         </tbody>
     </table>
 </div>
+@endif
+@endif
 @endsection

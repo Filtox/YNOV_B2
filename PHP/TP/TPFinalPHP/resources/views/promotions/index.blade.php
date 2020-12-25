@@ -3,6 +3,12 @@
 Liste des promotions
 @endsection
 @section('page-content')
+@if($promotions->isEmpty())
+<div class="container text-center">
+    <div class="card-header">Veuillez créer une promotion pour obtenir l'affichage des promotions</div>
+    <div class="row"><a class="ajout" href="{{ route('promotions.create') }}">Créer une promotion</a></div>
+</div>
+@else
 <div class="container">
     <div class="row"><a class="ajout" href="{{ route('promotions.create') }}">Créer une promotion</a></div>
     <table class="table" id="cssTable">
@@ -32,4 +38,5 @@ Liste des promotions
         </tbody>
     </table>
 </div>
+@endif
 @endsection

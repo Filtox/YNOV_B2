@@ -15,6 +15,12 @@ Modification module
             <label class="create" for="description">Description</label><br>
             <textarea rows="4" id="description" name="description" class="form-control" required>{{$module->description}}</textarea>
         </div>
+        @if ($promotions->isEmpty())
+        <br><br>
+        <div class="container text-center">
+            <div class="card-header">Pas de promotion créée</div>
+        </div><br><br>
+    @else
         <div>
             <h4>Promotions</h4>
             @foreach($promotions as $promotion)
@@ -27,6 +33,13 @@ Modification module
             </label>
             @endforeach
         </div>
+        @endif
+        <br>
+        @if ($students->isEmpty())
+        <div class="container text-center">
+            <div class="card-header">Pas d'élève créé</div>
+        </div><br><br>
+    @else
         <div>
             <h4>Elèves</h4>
             @foreach($students as $student)
@@ -39,6 +52,7 @@ Modification module
             </label>
             @endforeach
         </div>
+        @endif
         <div class="wrapper">
             <button type="submit" class="btn detail btn-primary">Valider</button>
         </div>        

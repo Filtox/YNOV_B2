@@ -3,6 +3,12 @@
 Modification module
 @endsection
 @section('page-content')
+@if($modules->isEmpty())
+<div class="container text-center">
+    <div class="card-header">Veuillez créer un module pour obtenir l'affichage des modules</div>
+    <div class="row"><a class="ajout" href="{{ route('modules.create') }}">Créer un module</a></div>
+</div>
+@else
 <div class="container">
     <div class="row"><a class="ajout" href="{{ route('modules.create') }}">Créer un module</a></div>
     <table class="table" id="cssTable">
@@ -24,11 +30,13 @@ Modification module
                     <form action="{{ route('modules.destroy', $module) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" class="supp btn btn-primary" value="Supprimer"></form>
+                        <input type="submit" class="supp btn btn-primary" value="Supprimer">
+                    </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
+@endif
 @endsection
