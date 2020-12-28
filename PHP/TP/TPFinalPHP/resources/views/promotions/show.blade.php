@@ -5,7 +5,12 @@ Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}
 @section('page-content')
 <div class="container text-center">
     <div class="card-header">Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}</div>
+    <div class="button1" id="button-2">
+        <div id="slide"></div>
+        <a href=" {{ route('promotions.edit', $promotion) }} ">Modifier la promotion</a>
+    </div>
     <div class="card-body">
+        @forelse ($promotion->modules ?? [] as $module)
         <h3 class="card-text"> Modules : </h3>
         <table class="table" id="cssTable">
             <thead class="table-dark">
@@ -16,7 +21,6 @@ Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}
                 </tr>
             </thead>
             <tbody>
-                @forelse ($promotion->modules ?? [] as $module)
                 <tr>
                     <td>{{ $module->nom }}</td>
                     <td>{{ $module->description }}</td>
@@ -29,13 +33,16 @@ Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}
                             <input type="submit" class="supp btn btn-primary" value="Supprimer">
                         </form>
                     </td>
-                    @empty
-                    <td>Aucun module</td>
-                    @endforelse
                 </tr>
             </tbody>
         </table>
+        @empty
+        <div class="container text-center">
+            <div class="card-header">Cette promotion ne compte aucun module</div>
+        </div><br><br>
+        @endforelse
         <br>
+        @forelse ($promotion->students ?? [] as $student)
         <h3 class="card-text"> Eleves : </h3><br>
         <table class="table" id="cssTable">
             <thead class="table-dark">
@@ -47,7 +54,6 @@ Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}
                 </tr>
             </thead>
             <tbody>
-                @forelse ($promotion->students ?? [] as $student)
                 <tr>
                     <td>{{ $student->nom }}</td>
                     <td>{{ $student->prenom }}</td>
@@ -61,13 +67,14 @@ Promotion : {{ $promotion->nom }} {{ $promotion->specialite }}
                             <input type="submit" class="supp btn btn-primary" value="Supprimer">
                         </form>
                     </td>
-                    @empty
-                    <td>Aucun élève</td>
-                </tr>
-                @endforelse
                 </tr>
             </tbody>
         </table>
+        @empty
+        <div class="container text-center">
+            <div class="card-header">Cette promotion ne compte aucun élève</div>
+        </div><br><br>
+        @endforelse
     </div>
 </div>
 @endsection

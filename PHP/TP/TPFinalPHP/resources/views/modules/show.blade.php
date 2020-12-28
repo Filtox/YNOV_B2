@@ -5,8 +5,13 @@ Module : {{ $module->nom }}
 @section('page-content')
 <div class="text-center container">
     <div class="card-header">Module : {{ $module->nom }}</div>
+    <div class="button1" id="button-2">
+        <div id="slide"></div>
+        <a href=" {{ route('modules.edit', $module) }} ">Modifier le module</a>
+    </div>
     <div class="card-body">
         <h3 class="card-text"> Promotions : </h3>
+        @forelse ($module->promotions ?? [] as $promotion)
         <table class="table" id="cssTable">
             <thead class="table-dark">
                 <tr>
@@ -16,7 +21,6 @@ Module : {{ $module->nom }}
                 </tr>
             </thead>
             <tbody>
-                @forelse ($module->promotions ?? [] as $promotion)
                 <tr>
                     <td>{{ $promotion->nom }}</td>
                     <td>{{ $promotion->specialite }}</td>
@@ -29,12 +33,16 @@ Module : {{ $module->nom }}
                             <input type="submit" class="supp btn btn-primary" value="Supprimer">
                         </form>
                     </td>
-                    @empty
-                    <td>Aucune promotion</td>
-                    @endforelse
                 </tr>
             </tbody>
         </table>
+        @empty
+        <div class="container text-center">
+            <div class="card-header">Ce module n'est inscrit dans aucune promotion</div>
+        </div><br><br>
+        @endforelse
+        <br>
+        @forelse ($module->students ?? [] as $student)
         <h3 class="card-text"> Elèves : </h3>
         <table class="table" id="cssTable">
             <thead class="table-dark">
@@ -45,7 +53,6 @@ Module : {{ $module->nom }}
                 </tr>
             </thead>
             <tbody>
-                @forelse ($module->students ?? [] as $student)
                 <tr>
                     <td>{{ $student->nom }}</td>
                     <td>{{ $student->prenom }}</td>
@@ -58,12 +65,14 @@ Module : {{ $module->nom }}
                             <input type="submit" class="supp btn btn-primary" value="Supprimer">
                         </form>
                     </td>
-                    @empty
-                    <td>Aucun élève</td>
-                    @endforelse
                 </tr>
             </tbody>
         </table>
+        @empty
+        <div class="container text-center">
+            <div class="card-header">Ce module ne compte aucun élève</div>
+        </div><br><br>
+        @endforelse
     </div>
 </div>
 @endsection
