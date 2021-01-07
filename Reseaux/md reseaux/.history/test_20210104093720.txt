@@ -1,0 +1,24 @@
+---
+title: ”B2 - Lab 3 - GROUP NV”
+author:
+- Llorens Clément
+- Lafond Nicolas
+output:
+pdf_document: default
+---
+
+# LAB_3 Reseau
+```etc/config/firewall```
+## STAGE 0
+
+Lancer gns3
+- Se rendre dans file -> new blank project
+
+![creation](images/blankproject.jpg)
+
+- Remplir le nom du project -> valider
+
+![creation2](images/blankproject2.jpg)
+
+## STAGE 1
+
