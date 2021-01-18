@@ -31,8 +31,10 @@ Elève : {{ $student->nom }} {{ $student->prenom }}
                 <tr>
                     <td>{{ $module->nom }}</td>
                     <td>{{ $module->description }}</td>
-                    <td><a href=" {{ route('modules.show', ['module' => $module]) }} " class="btn detail btn-primary">Détails</a></td>
-                    <td><a href=" {{ route('modules.edit', ['module' => $module]) }} " class="btn modif btn-primary">Modifier</a></td>
+                    <td><a href=" {{ route('modules.show', ['module' => $module]) }} "
+                            class="btn detail btn-primary">Détails</a></td>
+                    <td><a href=" {{ route('modules.edit', ['module' => $module]) }} "
+                            class="btn modif btn-primary">Modifier</a></td>
                     <td>
                         <form action="{{ route('modules.destroy', ['module' => $module]) }}" method="POST">
                             @csrf
