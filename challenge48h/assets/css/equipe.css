@@ -1,0 +1,75 @@
+.team-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:0 -16px;
+}
+
+.card {
+    padding:16px;
+
+    background-color: #88b53d;
+}
+
+.card:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.background-white {
+    background-color: white;
+}
+
+.background-green {
+    background-color: #88b53d!important;
+}
+
+.card-top{
+    height: 200px;
+    border-radius: 50%;
+}
+
+.card-top .card-img-top{
+    object-fit: contain;
+    height: 80%;
+    object-position: center;
+    width: 100%;
+}
+
+.section-title{
+    margin-bottom: 5rem;
+text-align: center;
+
+    position:relative;
+}
+
+.section-title h2 {
+    font-weight: 700;
+    margin: 10rem auto 5rem;
+    background-color:white;
+    width: fit-content;
+    padding:0 4rem;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    bottom:0;
+    left: 0;
+    height:3px;
+    background-color:#88b53d;
+
+    top:50%;
+    width: 50%;
+    z-index:-1;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    top:50%;
+    right:0;
+    height:3px;
+    background-color:#88b53d;
+    width: 50%;
+    z-index:-1;
+}
