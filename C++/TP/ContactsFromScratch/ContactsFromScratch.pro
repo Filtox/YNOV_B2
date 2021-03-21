@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     contact.cpp \
+    gestiondatabase.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     contact.h \
+    gestiondatabase.h \
     mainwindow.h
 
 FORMS += \

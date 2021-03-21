@@ -1,6 +1,8 @@
 #include <QDebug>
 #include "contact.h"
 
+QStringList Contact::m_ids;
+
 QString Contact::firstname() const
 {
     return m_firstname;
@@ -31,34 +33,49 @@ void Contact::setEmail(const QString &email)
     m_email = email;
 }
 
+QString Contact::numberphone() const
+{
+    return m_numberphone;
+}
+
+void Contact::setNumberphone(const QString &numberphone)
+{
+    m_numberphone = numberphone;
+}
+
+QString Contact::commentary(bool encode) const
+{
+    if(!encode)
+    {
+        return  m_commentary;
+    }
+    QString tmp = m_commentary;
+    tmp = tmp.replace('\n', "<eol>");
+    return tmp;
+}
+
+void Contact::setCommentary(const QString &commentary)
+{
+    QString tmp = commentary;
+    tmp = tmp.replace("<eol>", "\n");
+    m_commentary = tmp;
+    qDebug() << __FUNCTION__ << m_commentary;
+}
+
+void Contact::updateID()
+{
+    m_id = m_email + m_numberphone;
+}
+
+
 QString Contact::getLine()
 {
-    return QString(m_firstname + CONTACT_SEPARATOR + m_lastname + CONTACT_SEPARATOR + m_email + CONTACT_SEPARATOR + m_tel + CONTACT_SEPARATOR + m_commentaire + '\n');
+    return QString(m_firstname + CONTACT_SEPARATOR + m_lastname + CONTACT_SEPARATOR + m_email + CONTACT_SEPARATOR + m_numberphone + CONTACT_SEPARATOR + commentary(true) + '\n');
 }
 
-QString Contact::tel() const
-{
-    return m_tel;
-}
-
-void Contact::setTel(const QString &tel)
-{
-    m_tel = tel;
-}
-
-QString Contact::commentaire() const
-{
-    return m_commentaire;
-}
-
-void Contact::setCommentaire(const QString &commentaire)
-{
-    m_commentaire = commentaire;
-}
-
-Contact::Contact(QString firstname, QString lastname, QString email, QString tel, QString commentaire):
-    m_firstname(firstname), m_lastname(lastname), m_email(email), m_tel(tel), m_commentaire(commentaire) {
-    qDebug() << __FUNCTION__ << m_firstname << m_lastname << m_email << m_tel << m_commentaire;
+Contact::Contact(QString firstname, QString lastname, QString email, QString numberphone, QString commentary):
+    m_firstname(firstname), m_lastname(lastname), m_email(email), m_numberphone(numberphone), m_commentary(commentary) {
+    setCommentary(commentary);
 }
 
 Contact::Contact(QString infos)
@@ -67,23 +84,43 @@ Contact::Contact(QString infos)
     m_firstname = data.at(0);
     m_lastname = data.at(1);
     m_email = data.at(2);
-    m_tel = data.at(3);
-    m_commentaire = data.at(4);
+    m_numberphone = data.at(3);
+    setCommentary(data.at(4));
 
-    qDebug() << __FUNCTION__ << m_firstname << m_lastname << m_email << m_tel << m_commentaire;
 }
 
+QString Contact::createID(QString email, QString numberphone)
+{
+    QString id = email + numberphone;
+    if(!m_ids.contains(id))
+    {
+        m_ids.append(id);
+    }
+    return id;
+}
 
+Contact *Contact::createContact(QString infos)
+{
+    if(infos == "")
+    {
+        return new Contact("", "", "", "", "");
+    }
 
+    QStringList data = infos.split(CONTACT_SEPARATOR);
+    QString email = data.at(2);
+    QString numberphone = data.at(3);
 
+    QString id = email + numberphone;
+    if(!m_ids.contains(id))
+    {
+        createID(email, numberphone);
+        Contact* retContact = new Contact(infos);
+        return retContact;
+    }
 
+//    retContact->updateID();
 
-
-
-
-
-
-
-
-
+//    return retContact;
+    return nullptr;
+}
 

@@ -9,17 +9,18 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    contact.cpp \
+    gestiondatabase.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    contact.h \
+    gestiondatabase.h \
     mainwindow.h
 
 FORMS += \
     mainwindow.ui
-
-TRANSLATIONS += \
-    TPContact_fr_FR.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
