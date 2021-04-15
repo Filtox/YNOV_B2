@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: space-between, center;
+    align-items: center;
+    background-color: #C4C4C4;
+}
+
+.item {
+    margin-left: 30%;
+    font-size: 2.8rem;
+}
+
+.liste {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    list-style-type: none;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #5F6792;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.contenu {
+    margin: 1%;
+    background-color: #EFEEEE;    
+}
+
+.contenu img {
+    float: left;
+    display: inline;
+}
+
+.contenu p {
+    float: left;
+}
+
+.item-liste {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}

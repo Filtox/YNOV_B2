@@ -1,0 +1,80 @@
+.bleu {
+    background-color: #38C8FE;
+}
+
+.orange {
+    background-color: #FFAF47;
+}
+
+.bleu, .orange {
+    height: 5rem;
+    width: 50%;
+    margin: 1rem;
+}
+
+.un {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.deux {
+    background-color: #FF7747;
+    width: auto;
+    height: 10rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.trois {
+    display: flex;
+    flex-direction: row;
+}
+
+.jaune {
+    background-color: #ffd647;
+    flex-basis: 100%;
+    height: 7rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.quatre {
+    width: auto;
+    height: 5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    background-color: #FDC1FF;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .jaune {
+        height: 10rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .trois {
+        flex-wrap: wrap;
+    }
+
+    .jaune {
+        height: 5rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .trois {
+        flex-wrap: wrap;
+    }
+
+    .jaune {
+        height: 5rem;
+    }
+}
