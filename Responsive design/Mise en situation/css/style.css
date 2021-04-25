@@ -1,5 +1,14 @@
-.espace {
+.espace-m {
     height: 5rem;
+}
+
+.espace-s {
+    height: 2rem;
+}
+
+.trait {
+    height: 1px;
+    background-color: lightgray;
 }
 
 /* 
@@ -60,3 +69,26 @@
         width: 100%!important;
     }
 }
+
+
+#pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 30%;
+  }
+  
+  .alert {
+    position: relative;
+  }
+  
+  .alert .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1em;
+  }
+  
+  .alert .fa {
+    margin-right:.3em;
+  }

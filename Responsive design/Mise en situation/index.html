@@ -11,18 +11,22 @@
 </head>
 
 <body>
+    <header>
+
+    </header>
     <div class="container-fluid">
         <div class="row">
-            <h1>Forrest Gump</h1>
+            <h1 class="mx-auto" style="color: #04387A;">Forrest Gump</h1>
         </div>
     </div>
+    <div class="espace-s"></div>
     <div class="container">
         <div class="row">
-            <img style="width: 50%; height: auto;" class="rounded mx-auto d-block img-thumbnail img-fluid"
-                src="/img/affiche.jpg" alt="affiche">
+            <img class="rounded mx-auto w-50 d-block img-thumbnail img-fluid" src="/img/affiche.jpg" alt="affiche">
         </div>
     </div>
-    <div class="espace"></div>
+    <div class="espace-m"></div>
+    <div class="espace-s"></div>
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -61,18 +65,22 @@
             </a>
         </div>
     </div>
-    <div class="espace"></div>
+    <div class="espace-m"></div>
+    <div class="trait mx-auto w-50"></div>
+    <div class="espace-m"></div>
     <div class="container">
         <p>Au fil des différents interlocuteurs qui viennent s'asseoir tour à tour à côté de lui sur un banc, Forrest
             Gump raconte la fabuleuse histoire de sa vie. Sa vie est à l'image d'une plume qui se laisse porter par le
             vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans l'Amérique de la seconde
             moitié du 20e siècle.</p>
     </div>
-    <div class="espace"></div>
+    <div class="espace-m"></div>
+    <div class="trait mx-auto w-50"></div>
+    <div class="espace-s"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm text-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 18rem;">
                     <img src="img/tom_hanks.jpg" class="card-img-top" alt="Tom Hanks">
                     <div class="card-body">
                         <h6>Tom Hanks</h6>
@@ -83,9 +91,10 @@
                         </button>
                     </div>
                 </div>
+                <div class="espace-s"></div>
             </div>
             <div class="col-sm text-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 18rem;">
                     <img src="img/gary_sinise.jpg" class="card-img-top" alt="Gary Sinise">
                     <div class="card-body">
                         <h6>Gary Sinise</h6>
@@ -96,26 +105,73 @@
                         </button>
                     </div>
                 </div>
+                <div class="espace-s"></div>
             </div>
             <div class="col-sm text-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 18rem;">
                     <img src="img/mykelti_williamson.jpg" class="card-img-top" alt="Mykelti Williamson">
                     <div class="card-body">
                         <h6>Mykelti Williamson</h6>
                         <button type="button" class="btn btn-secondary myPopover" data-container="body"
                             data-toggle="popover" data-placement="top" data-trigger="focus"
-                            data-content="Mykelti Williamson (Bubba dans le film) est le soldat qui accompagne Forrest tout au long de la guerre. Il parle de crevettes à Forrest et que son rêve est de monter une entreprise de pêche de crevettes.">
+                            data-content="Mykelti Williamson (Bubba dans le film) est le soldat qui accompagne Forrest tout au long de la guerre. Il parle de crevettes à Forrest et de son rêve, qui est de monter une entreprise de pêche à la crevette.">
                             Informations sur l'acteur
                         </button>
                     </div>
                 </div>
+                <div class="espace-s"></div>
             </div>
         </div>
     </div>
+    <div class="espace-m"></div>
+    <div class="trait mx-auto w-50"></div>
+    <div class="espace-s"></div>
+    <div class="container">
+        <h3 style="color: #04387A;" class="text-center">Acheter ce film en DVD</h3>
+        <div class="espace-s"></div>
+        <form class="w-50 mx-auto">
+            <div class="form-group">
+                <label for="lastname">Nom</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="firstname">Prénom</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" class="form-control">
+                <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec qui que
+                    ce soit.</small>
+            </div>
+            <div class="form-group">
+                <label for="exemplaire">Nombre d'exemplaire</label>
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+        </form>
+        <div class="text-center">
+            <div class="container">
+                <button class="btn btn-success"
+                    onclick="createAlert('','Nice Work!','Here is a bunch of text about some stuff that happened.','success',true,true,'pageMessages');">Add
+                    Success Alert</button>
+            </div>
+        </div>
+    </div>
+    <div id="pageMessages"></div>
     <footer>
 
     </footer>
-
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -131,6 +187,82 @@
         $(function () {
             $(".myPopover").popover();
         });
+
+        function createAlert(title, summary, details, severity, dismissible, autoDismiss, appendToId) {
+            var iconMap = {
+                success: "fa fa-thumbs-up"
+            };
+
+            var iconAdded = false;
+
+            var alertClasses = ["alert", "animated", "flipInX"];
+            alertClasses.push("alert-" + severity.toLowerCase());
+
+            if (dismissible) {
+                alertClasses.push("alert-dismissible");
+            }
+
+            var msgIcon = $("<i />", {
+                "class": iconMap[severity] // you need to quote "class" since it's a reserved keyword
+            });
+
+            var msg = $("<div />", {
+                "class": alertClasses.join(" ") // you need to quote "class" since it's a reserved keyword
+            });
+
+            if (title) {
+                var msgTitle = $("<h4 />", {
+                    html: title
+                }).appendTo(msg);
+
+                if (!iconAdded) {
+                    msgTitle.prepend(msgIcon);
+                    iconAdded = true;
+                }
+            }
+
+            if (summary) {
+                var msgSummary = $("<strong />", {
+                    html: summary
+                }).appendTo(msg);
+
+                if (!iconAdded) {
+                    msgSummary.prepend(msgIcon);
+                    iconAdded = true;
+                }
+            }
+
+            if (details) {
+                var msgDetails = $("<p />", {
+                    html: details
+                }).appendTo(msg);
+
+                if (!iconAdded) {
+                    msgDetails.prepend(msgIcon);
+                    iconAdded = true;
+                }
+            }
+
+
+            if (dismissible) {
+                var msgClose = $("<span />", {
+                    "class": "close", // you need to quote "class" since it's a reserved keyword
+                    "data-dismiss": "alert",
+                    html: "<i class='fa fa-times-circle'></i>"
+                }).appendTo(msg);
+            }
+
+            $('#' + appendToId).prepend(msg);
+
+            if (autoDismiss) {
+                setTimeout(function () {
+                    msg.addClass("flipOutX");
+                    setTimeout(function () {
+                        msg.remove();
+                    }, 1000);
+                }, 5000);
+            }
+        }
     </script>
 </body>
 
