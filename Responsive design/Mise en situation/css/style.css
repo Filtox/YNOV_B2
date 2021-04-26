@@ -1,94 +1,103 @@
 .espace-m {
-    height: 5rem;
+  height: 5rem;
 }
 
 .espace-s {
-    height: 2rem;
+  height: 2rem;
+}
+
+.espace-xs {
+  height: 1rem;
 }
 
 .trait {
-    height: 1px;
-    background-color: lightgray;
+  height: 1px;
+  background-color: lightgray;
 }
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+.alert {
+  position: relative;
+}
+
+.alert .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1em;
+}
+
+.alert .fa {
+  margin-right: .3em;
+}
 
 @media (min-width: 1281px) {
-    /* CSS */
-}
-
-/* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-    /* CSS */
-}
-
-/* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* CSS */
-}
-
-/* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    /* CSS */
-}
-
-/* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-
-@media (min-width: 481px) and (max-width: 767px) {
-    .w-50 {
-        width: 80%!important;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-    .w-50 {
-        width: 100%!important;
-    }
-}
-
-@media (max-width: 319px) {
-    .w-50 {
-        width: 100%!important;
-    }
-}
-
-
-#pageMessages {
+  #pageMessages {
     position: fixed;
     bottom: 15px;
     right: 15px;
-    width: 30%;
+    width: 40%;
   }
-  
-  .alert {
-    position: relative;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40%;
   }
-  
-  .alert .close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 1em;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40%;
   }
-  
-  .alert .fa {
-    margin-right:.3em;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40%;
   }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .w-50 {
+    width: 80%!important;
+  }
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .w-50 {
+    width: 100%!important;
+  }
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40%;
+  }
+}
+
+@media (max-width: 319px) {
+  .w-50 {
+    width: 100%!important;
+  }
+  #pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 80%;
+  }
+}

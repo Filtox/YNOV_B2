@@ -5,18 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Forrest Gump</title>
 </head>
 
 <body>
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 90px;">
+        <div style="position: absolute; top: 20px; right: 20px;">
+            <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+                <div class="toast-header">
+                    <svg width="20" height="20" class="mr-2" viewBox="0 0 24 24">
+                        <path
+                            d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"
+                            fill="#ccc"></path>
+                    </svg>
+                    <strong class="mr-auto">Bienvenue !</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">Bienvenue sur le site dédié au film Forrest Gump.</div>
+            </div>
+        </div>
+    </div>
     <header>
 
     </header>
     <div class="container-fluid">
         <div class="row">
-            <h1 class="mx-auto" style="color: #04387A;">Forrest Gump</h1>
+            <h1 class="mx-auto fw-bold" style="color: #04387A;">Forrest Gump</h1>
         </div>
     </div>
     <div class="espace-s"></div>
@@ -85,7 +105,7 @@
                     <div class="card-body">
                         <h6>Tom Hanks</h6>
                         <button type="button" class="btn btn-secondary myPopover" data-container="body"
-                            data-toggle="popover" data-placement="top" data-trigger="focus"
+                            data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Tom Hanks joue le rôle principal dans ce film, sous le nom de Forrest Gump. Il raconte l'histoire de sa vie sur un banc.">
                             Informations sur l'acteur
                         </button>
@@ -99,7 +119,7 @@
                     <div class="card-body">
                         <h6>Gary Sinise</h6>
                         <button type="button" class="btn btn-secondary myPopover" data-container="body"
-                            data-toggle="popover" data-placement="top" data-trigger="focus"
+                            data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Gary Sinise (Lieutenant Dan dans le film) est le capitaine de Forrest pendant la guerre du Viêt Nam.">
                             Informations sur l'acteur
                         </button>
@@ -113,7 +133,7 @@
                     <div class="card-body">
                         <h6>Mykelti Williamson</h6>
                         <button type="button" class="btn btn-secondary myPopover" data-container="body"
-                            data-toggle="popover" data-placement="top" data-trigger="focus"
+                            data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Mykelti Williamson (Bubba dans le film) est le soldat qui accompagne Forrest tout au long de la guerre. Il parle de crevettes à Forrest et de son rêve, qui est de monter une entreprise de pêche à la crevette.">
                             Informations sur l'acteur
                         </button>
@@ -145,7 +165,7 @@
                     ce soit.</small>
             </div>
             <div class="form-group">
-                <label for="exemplaire">Nombre d'exemplaire</label>
+                <label for="exemplaire">Nombre d'exemplaire(s)</label>
                 <select class="form-control">
                     <option>1</option>
                     <option>2</option>
@@ -160,17 +180,24 @@
                 </select>
             </div>
         </form>
+        <div class="espace-xs"></div>
         <div class="text-center">
             <div class="container">
-                <button class="btn btn-success"
-                    onclick="createAlert('','Nice Work!','Here is a bunch of text about some stuff that happened.','success',true,true,'pageMessages');">Add
-                    Success Alert</button>
+                <button class="btn btn-outline-success"
+                    onclick="createAlert('','Email envoyé !','Vous allez recevoir un email dans lequel sera contenu les informations de la commande.','success',true,true,'pageMessages');">Commander</button>
             </div>
         </div>
     </div>
     <div id="pageMessages"></div>
+    <div class="espace-m"></div>
     <footer>
-
+        <div class="container">
+            <div class="row">
+                <div class="col"><img src="img/icone.png" class="img-thumbnail w-50" alt=""></div>
+                <div class="col">liens externes</div>
+                <div class="col"></div>
+            </div>
+        </div>
     </footer>
 
 
@@ -187,6 +214,8 @@
         $(function () {
             $(".myPopover").popover();
         });
+
+        $('.toast').toast("show")
 
         function createAlert(title, summary, details, severity, dismissible, autoDismiss, appendToId) {
             var iconMap = {
@@ -242,7 +271,6 @@
                     iconAdded = true;
                 }
             }
-
 
             if (dismissible) {
                 var msgClose = $("<span />", {
