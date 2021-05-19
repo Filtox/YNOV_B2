@@ -29,7 +29,7 @@
             </div>
         </nav>
     </header>
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 90px;">
+    <div aria-live="polite" class="no-print" aria-atomic="true" style="position: relative; min-height: 25px;">
         <div style="position: absolute; top: 20px; right: 20px;">
             <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
                 <div class="toast-header">
@@ -39,7 +39,7 @@
                             fill="#ccc"></path>
                     </svg>
                     <strong class="mr-auto">Bienvenue !</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <button type="button" class="ml-2 mb-1 close no-print" data-dismiss="toast" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -85,13 +85,13 @@
                     <img src="img/mer.jpg" class="d-block w-50 mx-auto" alt="">
                 </div>
             </div>
-            <a style="background-color: #4c4e58;" class="carousel-control-prev" href="#carouselExampleIndicators"
-                role="button" data-slide="prev">
+            <a style="background-color: #4c4e58;" class="carousel-control-prev no-print"
+                href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a style="background-color: #4c4e58;" class="carousel-control-next" href="#carouselExampleIndicators"
-                role="button" data-slide="next">
+            <a style="background-color: #4c4e58;" class="carousel-control-next no-print"
+                href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -99,24 +99,29 @@
     </div>
     <div class="espace-m"></div>
     <div class="trait mx-auto w-50"></div>
-    <div class="espace-m"></div>
+    <div class="espace-s"></div>
+    <div class="row">
+        <h3 class="mx-auto fw-bold" style="color: #04387A;">Synopsis</h3>
+    </div>
+    <div class="espace-s"></div>
     <div class="container">
         <p>Au fil des différents interlocuteurs qui viennent s'asseoir tour à tour à côté de lui sur un banc, Forrest
             Gump raconte la fabuleuse histoire de sa vie. Sa vie est à l'image d'une plume qui se laisse porter par le
             vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans l'Amérique de la seconde
-            moitié du 20e siècle.</p>
+            moitié du 20e siècle.
+        </p>
     </div>
     <div class="espace-m"></div>
     <div class="trait mx-auto w-50"></div>
     <div class="espace-s"></div>
-    <div class="container">
+    <div class="container print-image">
         <div class="row">
             <div class="col-sm text-center">
                 <div class="card mx-auto" style="width: 18rem;">
                     <img src="img/tom_hanks.jpg" class="card-img-top" alt="Tom Hanks">
                     <div class="card-body">
                         <h6>Tom Hanks</h6>
-                        <button type="button" class="btn btn-secondary myPopover" data-container="body"
+                        <button type="button" class="btn btn-secondary myPopover no-print" data-container="body"
                             data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Tom Hanks joue le rôle principal dans ce film, sous le nom de Forrest Gump. Il raconte l'histoire de sa vie sur un banc.">
                             Informations sur l'acteur
@@ -130,7 +135,7 @@
                     <img src="img/gary_sinise.jpg" class="card-img-top" alt="Gary Sinise">
                     <div class="card-body">
                         <h6>Gary Sinise</h6>
-                        <button type="button" class="btn btn-secondary myPopover" data-container="body"
+                        <button type="button" class="btn btn-secondary myPopover no-print" data-container="body"
                             data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Gary Sinise (Lieutenant Dan dans le film) est le capitaine de Forrest pendant la guerre du Viêt Nam.">
                             Informations sur l'acteur
@@ -144,7 +149,7 @@
                     <img src="img/mykelti_williamson.jpg" class="card-img-top" alt="Mykelti Williamson">
                     <div class="card-body">
                         <h6>Mykelti Williamson</h6>
-                        <button type="button" class="btn btn-secondary myPopover" data-container="body"
+                        <button type="button" class="btn btn-secondary myPopover no-print" data-container="body"
                             data-toggle="popover" data-placement="bottom" data-trigger="focus"
                             data-content="Mykelti Williamson (Bubba dans le film) est le soldat qui accompagne Forrest tout au long de la guerre. Il parle de crevettes à Forrest et de son rêve, qui est de monter une entreprise de pêche à la crevette.">
                             Informations sur l'acteur
@@ -158,8 +163,8 @@
     <div class="espace-m"></div>
     <div class="trait mx-auto w-50"></div>
     <div class="espace-s"></div>
-    <div class="container">
-        <h3 style="color: #04387A;" class="text-center">Acheter ce film en DVD</h3>
+    <div class="container no-print">
+        <h3 style="color: #04387A;" class="text-center">Reserver une place de cinéma</h3>
         <div class="espace-s"></div>
         <form class="w-50 mx-auto">
             <div class="form-group">
@@ -195,8 +200,51 @@
         <div class="espace-xs"></div>
         <div class="text-center">
             <div class="container">
-                <button class="btn btn-outline-success"
-                    onclick="createAlert('','Email envoyé !','Vous allez recevoir un email dans lequel sera contenu les informations de la commande.','success',true,true,'pageMessages');">Commander</button>
+                <button class="btn btn-outline-success no-print"
+                    onclick="createAlert('','Email envoyé !','Vous allez recevoir un email dans lequel sera contenu les informations de la commande.','success',true,true,'pageMessages');">Réserver</button>
+            </div>
+        </div>
+    </div>
+    <div class="espace-m"></div>
+    <div class="container no-print">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="img/bluray.jpg" class="bluray" style="width: 60%; height: auto;" alt="Bluray">
+                </div>
+                <div class="col" style="flex-grow: 2;">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h5 style="color: #04387A;">Acheter le film en Blu-ray</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="exemplaire">Nombre d'exemplaire(s)</label>
+                                <select class="form-control mx-auto" style="width: 45%;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <h5 class="card-title">19 €</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <div class="text-center">
+                                <div class="container">
+                                    <button class="btn btn-outline-success no-print"
+                                        onclick="createAlert('','Email envoyé !','Vous allez recevoir un email dans lequel sera contenu les informations de la commande.','success',true,true,'pageMessages');">Commander</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -204,7 +252,7 @@
     <div class="espace-m"></div>
     <div class="trait mx-auto w-100"></div>
     <div style="background-color: #E9F2F8;" class="espace-s"></div>
-    <footer style="background-color: #E9F2F8;">
+    <footer style="background-color: #E9F2F8;" class="no-print">
         <div class="container">
             <div class="row">
                 <div class="col" style="justify-content: center; display: flex;">
@@ -229,10 +277,27 @@
                             style="text-decoration: none; outline: none; color: #04387A;"
                             href="https://fr.wikipedia.org/wiki/Forrest_Gump">Wikipédia</a></div>
                 </div>
+                <div class="col">
+                    <div class="row" style="justify-content: center;">
+                        <h5>Pages</h5>
+                    </div>
+                    <div class="espace-xs"></div>
+                    <div class="row mx-auto" style="justify-content: center;"><a
+                            style="text-decoration: none; outline: none; color: #04387A;" href="index.html">Accueil</a>
+                    </div>
+                    <div class="row mx-auto" style="justify-content: center;"><a
+                            style="text-decoration: none; outline: none; color: #04387A;"
+                            href="distribution.html">Distribution</a></div>
+                    <div class="row mx-auto" style="justify-content: center;"><a
+                            style="text-decoration: none; outline: none; color: #04387A;" href="ba.html">Bande
+                            annonce</a></div>
+                    <div class="row mx-auto" style="justify-content: center;"><a
+                            style="text-decoration: none; outline: none; color: #04387A;" href="photos.html">Photos</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

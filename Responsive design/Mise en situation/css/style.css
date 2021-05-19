@@ -76,6 +76,10 @@
   } 
 }
 
+th {
+  padding: 1.5rem!important;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   #pageMessages {
     position: fixed;
@@ -142,5 +146,18 @@
   }
   .photo_galerie_fin {
     flex-grow: 1;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+  .print-image {
+    page-break-inside: avoid;
+  }
+  .bluray {
+    width: 20%!important;
+    height: auto;
   }
 }
